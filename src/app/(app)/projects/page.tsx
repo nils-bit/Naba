@@ -67,17 +67,21 @@ export default function ProjectsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+        <div className="w-6 h-6 border-2 border-[#007AFF] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-6">
-      <h2 className="text-xl font-bold text-gray-900 mb-4">Projekt</h2>
+    <div className="max-w-lg mx-auto px-4 py-6 animate-fade-in">
+      <h2 className="text-2xl font-semibold tracking-tight text-[#1D1D1F] mb-6">
+        Projekt
+      </h2>
 
-      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-6">
-        <h3 className="text-sm font-medium text-gray-700 mb-3">Nytt projekt</h3>
+      <div className="glass-card p-5 mb-6">
+        <h3 className="text-xs font-medium uppercase tracking-wider text-[#6E6E73] mb-4">
+          Nytt projekt
+        </h3>
         <ProjectForm onSubmit={handleCreate} submitLabel="Lagg till" />
       </div>
 

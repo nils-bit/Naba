@@ -77,63 +77,79 @@ export function WeekTable({ entries, weekStart }: WeekTableProps) {
 
   if (rows.length === 0) {
     return (
-      <p className="text-sm text-gray-400 text-center py-8">
+      <p className="text-sm text-[#AEAEB2] text-center py-10">
         Inga tidsregistreringar denna vecka
       </p>
     );
   }
 
   return (
-    <div className="overflow-x-auto -mx-4">
-      <table className="w-full text-sm min-w-[600px]">
-        <thead>
-          <tr className="bg-blue-600 text-white">
-            <th className="text-left px-3 py-2 font-medium">Projekt</th>
-            {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-              <th key={i} className="text-right px-2 py-2 font-medium w-16">
-                {getDayName(i)}
+    <div className="glass-card overflow-hidden animate-slide-up">
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm min-w-[600px]">
+          <thead>
+            <tr className="border-b border-black/[0.06]">
+              <th className="text-left px-4 py-3 text-xs font-medium uppercase tracking-wider text-[#6E6E73]">
+                Projekt
               </th>
+              {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+                <th
+                  key={i}
+                  className="text-right px-2 py-3 text-xs font-medium uppercase tracking-wider text-[#6E6E73] w-16"
+                >
+                  {getDayName(i)}
+                </th>
+              ))}
+              <th className="text-right px-4 py-3 text-xs font-medium uppercase tracking-wider text-[#6E6E73] w-16">
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, rowIndex) => (
+              <tr
+                key={row.projectName}
+                className={`border-b border-black/[0.04] transition-colors duration-150 ${
+                  rowIndex % 2 === 1 ? 'bg-black/[0.02]' : ''
+                }`}
+              >
+                <td className="px-4 py-3">
+                  <div className="flex items-center gap-2.5">
+                    <span
+                      className="w-2 h-2 rounded-full shrink-0"
+                      style={{ backgroundColor: row.projectColor }}
+                    />
+                    <span className="text-[#1D1D1F] font-medium truncate">
+                      {row.projectName}
+                    </span>
+                  </div>
+                </td>
+                {row.days.map((h, i) => (
+                  <td key={i} className="text-right px-2 py-3 text-[#6E6E73] tabular-nums">
+                    {fmtHours(h)}
+                  </td>
+                ))}
+                <td className="text-right px-4 py-3 font-semibold text-[#1D1D1F] tabular-nums">
+                  {fmtHours(row.total)}
+                </td>
+              </tr>
             ))}
-            <th className="text-right px-3 py-2 font-medium w-16">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.projectName} className="border-b border-gray-200">
-              <td className="px-3 py-2">
-                <div className="flex items-center gap-2">
-                  <span
-                    className="w-2.5 h-2.5 rounded-full shrink-0"
-                    style={{ backgroundColor: row.projectColor }}
-                  />
-                  <span className="truncate">{row.projectName}</span>
-                </div>
-              </td>
-              {row.days.map((h, i) => (
-                <td key={i} className="text-right px-2 py-2 text-gray-600">
+          </tbody>
+          <tfoot>
+            <tr className="bg-[#007AFF]/[0.04]">
+              <td className="px-4 py-3 font-semibold text-[#1D1D1F]">Totalt</td>
+              {dayTotals.map((h, i) => (
+                <td key={i} className="text-right px-2 py-3 font-semibold text-[#1D1D1F] tabular-nums">
                   {fmtHours(h)}
                 </td>
               ))}
-              <td className="text-right px-3 py-2 font-medium text-gray-900">
-                {fmtHours(row.total)}
+              <td className="text-right px-4 py-3 font-bold text-[#007AFF] tabular-nums">
+                {fmtHours(grandTotal)}
               </td>
             </tr>
-          ))}
-        </tbody>
-        <tfoot>
-          <tr className="bg-gray-50 font-medium">
-            <td className="px-3 py-2 text-gray-900">Totalt</td>
-            {dayTotals.map((h, i) => (
-              <td key={i} className="text-right px-2 py-2 text-gray-900">
-                {fmtHours(h)}
-              </td>
-            ))}
-            <td className="text-right px-3 py-2 text-gray-900 font-bold">
-              {fmtHours(grandTotal)}
-            </td>
-          </tr>
-        </tfoot>
-      </table>
+          </tfoot>
+        </table>
+      </div>
     </div>
   );
 }

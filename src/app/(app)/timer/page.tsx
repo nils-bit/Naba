@@ -136,7 +136,7 @@ export default function TimerPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+        <div className="w-6 h-6 border-2 border-[#007AFF] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -144,7 +144,7 @@ export default function TimerPage() {
   return (
     <div className="max-w-lg mx-auto px-4 py-6">
       {activeEntry && activeProject ? (
-        <div className="space-y-4">
+        <div className="space-y-4 animate-fade-in">
           <TimerDisplay
             projectName={activeProject.name}
             projectColor={activeProject.color}
@@ -152,35 +152,41 @@ export default function TimerPage() {
             tag={tag || undefined}
             onStop={handleStop}
           />
-          <div className="space-y-3 px-4">
+          <div className="space-y-3 px-2">
             <TagInput value={tag} onChange={setTag} />
             <input
               type="text"
               value={note}
               onChange={(e) => setNote(e.target.value)}
               placeholder="Anteckning (valfri)"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+              className="w-full px-4 py-3 bg-white/72 backdrop-blur-xl border border-black/[0.06] rounded-xl text-sm text-[#1D1D1F] placeholder:text-[#AEAEB2] focus:outline-none focus:ring-2 focus:ring-[#007AFF]/40 focus:border-transparent transition-all duration-200"
             />
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center gap-6 py-12">
-          <p className="text-gray-500 text-sm">Ingen timer igang</p>
-          <button
-            onClick={() => setPickerOpen(true)}
-            className="w-24 h-24 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors shadow-lg"
-            aria-label="Starta timer"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-10 h-10"
+        <div className="flex flex-col items-center gap-5 py-16 animate-slide-up">
+          <p className="text-[#6E6E73] text-sm">Ingen timer igang</p>
+
+          {/* Things 3-style play button with pulsing ring */}
+          <div className="relative">
+            <div className="absolute inset-0 -m-4 rounded-full timer-circle animate-pulse-ring" />
+            <button
+              onClick={() => setPickerOpen(true)}
+              className="relative w-24 h-24 rounded-full bg-[#007AFF] hover:bg-[#0066D6] active:scale-[0.93] text-white flex items-center justify-center transition-all duration-200 shadow-lg shadow-[#007AFF]/25"
+              aria-label="Starta timer"
             >
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-          </button>
-          <p className="text-gray-900 font-medium">Starta timer</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-10 h-10 ml-1"
+              >
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </button>
+          </div>
+
+          <p className="text-[#1D1D1F] font-medium text-sm">Starta timer</p>
         </div>
       )}
 
@@ -191,8 +197,10 @@ export default function TimerPage() {
       />
 
       {/* Today's entries */}
-      <div className="mt-8">
-        <h3 className="text-sm font-semibold text-gray-700 mb-3">Idag</h3>
+      <div className="mt-10">
+        <h3 className="text-xs font-medium uppercase tracking-wider text-[#6E6E73] mb-3 px-1">
+          Idag
+        </h3>
         <TodayEntries entries={todayEntries} />
       </div>
     </div>

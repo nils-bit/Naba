@@ -15,20 +15,22 @@ export default function ReportsPage() {
   const year = start.getFullYear();
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-6">
-      <h2 className="text-xl font-bold text-gray-900 mb-6">Rapporter</h2>
+    <div className="max-w-lg mx-auto px-4 py-6 animate-fade-in">
+      <h2 className="text-2xl font-semibold tracking-tight text-[#1D1D1F] mb-6">
+        Rapporter
+      </h2>
 
       {/* Generate report section */}
-      <div className="bg-white rounded-lg p-4 border border-gray-200 mb-8">
-        <h3 className="text-sm font-medium text-gray-700 mb-4">
+      <div className="glass-card p-5 mb-8">
+        <h3 className="text-xs font-medium uppercase tracking-wider text-[#6E6E73] mb-5">
           Generera rapport
         </h3>
 
         {/* Week picker */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-5">
           <button
             onClick={() => setWeekOffset((o) => o - 1)}
-            className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2.5 rounded-xl text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04] transition-all duration-200 press-effect"
             aria-label="Foregaende vecka"
           >
             <svg
@@ -45,16 +47,18 @@ export default function ReportsPage() {
             </svg>
           </button>
           <div className="text-center">
-            <span className="text-sm font-medium text-gray-900">
+            <span className="text-sm font-semibold text-[#1D1D1F]">
               Vecka {weekNum}, {year}
             </span>
             {weekOffset === 0 && (
-              <span className="block text-xs text-blue-600">Denna vecka</span>
+              <span className="block text-xs text-[#007AFF] font-medium mt-0.5">
+                Denna vecka
+              </span>
             )}
           </div>
           <button
             onClick={() => setWeekOffset((o) => o + 1)}
-            className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2.5 rounded-xl text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04] transition-all duration-200 press-effect"
             aria-label="Nasta vecka"
           >
             <svg
@@ -77,7 +81,7 @@ export default function ReportsPage() {
 
       {/* Previously generated reports */}
       <div>
-        <h3 className="text-sm font-semibold text-gray-700 mb-3">
+        <h3 className="text-xs font-medium uppercase tracking-wider text-[#6E6E73] mb-3 px-1">
           Sparade rapporter
         </h3>
         <ReportList />

@@ -50,12 +50,12 @@ export function GenerateReportButton({ weekOffset }: GenerateReportButtonProps) 
     <button
       onClick={handleGenerate}
       disabled={loading}
-      className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 transition-colors flex items-center justify-center gap-2"
+      className="w-full py-3.5 bg-[#007AFF] hover:bg-[#0066D6] active:scale-[0.97] text-white rounded-xl font-medium text-sm transition-all duration-200 disabled:opacity-50 shadow-sm shadow-[#007AFF]/20 flex items-center justify-center gap-2.5"
     >
       {loading ? (
         <>
-          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-          Genererar...
+          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+          <span>Genererar...</span>
         </>
       ) : (
         <>
@@ -73,7 +73,7 @@ export function GenerateReportButton({ weekOffset }: GenerateReportButtonProps) 
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
-          Ladda ner rapport
+          <span>Ladda ner rapport</span>
         </>
       )}
     </button>

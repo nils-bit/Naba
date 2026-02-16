@@ -68,40 +68,40 @@ export function ReportList() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center py-6">
-        <div className="w-5 h-5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+      <div className="flex items-center justify-center py-8">
+        <div className="w-5 h-5 border-2 border-[#007AFF] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
   if (files.length === 0) {
     return (
-      <p className="text-sm text-gray-400 text-center py-6">
+      <p className="text-sm text-[#AEAEB2] text-center py-8">
         Inga sparade rapporter
       </p>
     );
   }
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 stagger-children">
       {files.map((file) => (
         <div
           key={file.name}
-          className="flex items-center justify-between bg-white rounded-lg px-4 py-3 border border-gray-200"
+          className="flex items-center justify-between bg-white/72 backdrop-blur-xl rounded-2xl px-4 py-3.5 border border-black/[0.06] shadow-sm transition-all duration-200 hover:shadow-md"
         >
           <div className="min-w-0 flex-1">
-            <div className="text-sm font-medium text-gray-900 truncate">
+            <div className="text-sm font-medium text-[#1D1D1F] truncate">
               {file.name}
             </div>
             {file.created_at && (
-              <div className="text-xs text-gray-500">
+              <div className="text-xs text-[#AEAEB2] mt-0.5">
                 {new Date(file.created_at).toLocaleDateString('sv-SE')}
               </div>
             )}
           </div>
           <button
             onClick={() => handleDownload(file.name)}
-            className="ml-3 p-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors shrink-0"
+            className="ml-3 p-2.5 rounded-xl text-[#007AFF] hover:text-[#0066D6] hover:bg-[#007AFF]/[0.06] transition-all duration-200 shrink-0 press-effect"
             aria-label={`Ladda ner ${file.name}`}
           >
             <svg

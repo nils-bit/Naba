@@ -6,7 +6,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <AuthGuard>
       <Header />
-      <main className="pt-14 pb-20 min-h-screen">
+      <main className="pt-14 pb-24 min-h-screen bg-[#F5F5F7]">
         {children}
       </main>
       <BottomNav />

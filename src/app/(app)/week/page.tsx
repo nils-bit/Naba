@@ -37,12 +37,12 @@ export default function WeekPage() {
   }, [fetchEntries]);
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-6">
+    <div className="max-w-lg mx-auto px-4 py-6 animate-fade-in">
       {/* Week navigation */}
       <div className="flex items-center justify-between mb-6">
         <button
           onClick={() => setWeekOffset((o) => o - 1)}
-          className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+          className="p-2.5 rounded-xl text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04] transition-all duration-200 press-effect"
           aria-label="Foregaende vecka"
         >
           <svg
@@ -59,16 +59,16 @@ export default function WeekPage() {
           </svg>
         </button>
         <div className="text-center">
-          <h2 className="text-lg font-bold text-gray-900">
+          <h2 className="text-lg font-semibold text-[#1D1D1F] tracking-tight">
             Vecka {weekNum}, {year}
           </h2>
           {weekOffset === 0 && (
-            <span className="text-xs text-blue-600 font-medium">Denna vecka</span>
+            <span className="text-xs text-[#007AFF] font-medium">Denna vecka</span>
           )}
         </div>
         <button
           onClick={() => setWeekOffset((o) => o + 1)}
-          className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+          className="p-2.5 rounded-xl text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04] transition-all duration-200 press-effect"
           aria-label="Nasta vecka"
         >
           <svg
@@ -88,7 +88,7 @@ export default function WeekPage() {
 
       {loading ? (
         <div className="flex items-center justify-center py-12">
-          <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+          <div className="w-6 h-6 border-2 border-[#007AFF] border-t-transparent rounded-full animate-spin" />
         </div>
       ) : (
         <WeekTable entries={entries} weekStart={start} />
