@@ -45,25 +45,18 @@ export function TimerDisplay({
 
       {/* Project pill badge */}
       <div
-        className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-black/[0.06]"
+        className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-black/[0.06] max-w-[90%]"
         style={{ backgroundColor: `${projectColor}12` }}
       >
         <span
-          className="w-2.5 h-2.5 rounded-full"
+          className="w-2.5 h-2.5 rounded-full shrink-0"
           style={{ backgroundColor: projectColor }}
         />
-        <span className="text-sm font-medium text-[var(--text-primary)]">{projectName}</span>
+        <span className="text-sm font-medium text-[var(--text-primary)] line-clamp-2 text-center">{projectName}</span>
       </div>
 
-      {/* Tag */}
-      {tag && (
-        <span className="relative text-xs text-[var(--text-secondary)] bg-[var(--input-bg)] px-3 py-1 rounded-full">
-          {tag}
-        </span>
-      )}
-
       {/* Elapsed time - hours:minutes prominent, seconds dimmed */}
-      <div className="relative text-6xl font-extralight tracking-widest text-[var(--text-primary)] font-[var(--font-geist-mono)] tabular-nums">
+      <div className="relative font-extralight tracking-widest text-[var(--text-primary)] whitespace-nowrap tabular-nums" style={{ fontFamily: 'var(--font-geist-mono), ui-monospace, monospace', fontSize: 'clamp(48px, 14vw, 64px)' }}>
         {hm}<span className="opacity-50">{s}</span>
       </div>
 
@@ -82,6 +75,13 @@ export function TimerDisplay({
           <rect x="6" y="6" width="12" height="12" rx="2" />
         </svg>
       </button>
+
+      {/* Tag — below stop button */}
+      {tag && (
+        <span className="relative text-xs text-[var(--text-secondary)] bg-[var(--input-bg)] px-3 py-1 rounded-full">
+          {tag}
+        </span>
+      )}
     </div>
   );
 }

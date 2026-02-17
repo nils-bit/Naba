@@ -20,7 +20,7 @@ export default function ProjectsPage() {
       .order('created_at', { ascending: true });
     if (data) setProjects(data);
     setLoading(false);
-  }, [supabase]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     fetchProjects();

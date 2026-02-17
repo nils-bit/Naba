@@ -33,7 +33,7 @@ export default function WeekPage() {
 
     if (data) setEntries(data as TimeEntryWithProject[]);
     setLoading(false);
-  }, [supabase, weekOffset]);
+  }, [weekOffset]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     fetchEntries();
@@ -62,7 +62,7 @@ export default function WeekPage() {
           </svg>
         </button>
         <div className="text-center">
-          <h2 className="text-lg font-semibold text-[var(--text-primary)] tracking-tight">
+          <h2 className="text-lg font-semibold text-[var(--text-primary)] tracking-tight whitespace-nowrap">
             Vecka {weekNum}, {year}
           </h2>
           {weekOffset === 0 && (

@@ -17,6 +17,7 @@ export default function TimerPage() {
   const [note, setNote] = useState('');
   const [todayEntries, setTodayEntries] = useState<TimeEntryWithProject[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showShortTimerConfirm, setShowShortTimerConfirm] = useState(false);
   const supabase = createClient();
 
   const fetchTodayEntries = useCallback(async () => {
@@ -32,7 +33,7 @@ export default function TimerPage() {
       .order('start_time', { ascending: false });
 
     if (data) setTodayEntries(data as TimeEntryWithProject[]);
-  }, [supabase]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchActiveEntry = useCallback(async () => {
     const { data } = await supabase
@@ -55,7 +56,7 @@ export default function TimerPage() {
       if (data.tag) setTag(data.tag);
       if (data.note) setNote(data.note);
     }
-  }, [supabase]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     async function init() {
@@ -90,8 +91,21 @@ export default function TimerPage() {
     }
   }
 
-  async function handleStop() {
+  function handleStopRequest() {
     if (!activeEntry) return;
+
+    // UX-13: Check if timer is very short (< 30 seconds)
+    const elapsed = (Date.now() - new Date(activeEntry.start_time).getTime()) / 1000;
+    if (elapsed < 30) {
+      setShowShortTimerConfirm(true);
+      return;
+    }
+    doStop();
+  }
+
+  async function doStop() {
+    if (!activeEntry) return;
+    setShowShortTimerConfirm(false);
 
     const now = new Date().toISOString();
     const updates: Record<string, string | null> = { end_time: now };
@@ -99,7 +113,6 @@ export default function TimerPage() {
     // Save tag if provided
     if (tag.trim()) {
       updates.tag = tag.trim();
-      // Create tag if it doesn't exist
       const {
         data: { user },
       } = await supabase.auth.getUser();
@@ -132,6 +145,22 @@ export default function TimerPage() {
     setTag('');
     setNote('');
     fetchTodayEntries();
+  }
+
+  async function handleDiscard() {
+    if (!activeEntry) return;
+    setShowShortTimerConfirm(false);
+    // Delete the entry instead of saving
+    await supabase.from('time_entries').delete().eq('id', activeEntry.id);
+    setActiveEntry(null);
+    setActiveProject(null);
+    setTag('');
+    setNote('');
+  }
+
+  async function handleDeleteEntry(id: string) {
+    await supabase.from('time_entries').delete().eq('id', id);
+    setTodayEntries((prev) => prev.filter((e) => e.id !== id));
   }
 
   if (loading) {
@@ -171,8 +200,30 @@ export default function TimerPage() {
             projectColor={activeProject.color}
             startTime={new Date(activeEntry.start_time)}
             tag={tag || undefined}
-            onStop={handleStop}
+            onStop={handleStopRequest}
           />
+          {/* UX-13: Short timer confirmation */}
+          {showShortTimerConfirm && (
+            <div className="glass-card p-4 text-center space-y-3 animate-fade-in">
+              <p className="text-sm text-[var(--text-primary)]">
+                Registreringen är under 1 minut. Vill du spara ändå?
+              </p>
+              <div className="flex gap-3 justify-center">
+                <button
+                  onClick={doStop}
+                  className="px-5 py-2 rounded-xl bg-[var(--primary)] text-white text-sm font-medium hover-glow"
+                >
+                  Spara ändå
+                </button>
+                <button
+                  onClick={handleDiscard}
+                  className="px-5 py-2 rounded-xl bg-[var(--input-bg)] text-[var(--text-secondary)] text-sm font-medium hover:bg-black/[0.06] transition-colors"
+                >
+                  Kasta bort
+                </button>
+              </div>
+            </div>
+          )}
           <div className="space-y-3 px-2">
             <TagInput value={tag} onChange={setTag} />
             <input
@@ -224,7 +275,7 @@ export default function TimerPage() {
         <h3 className="text-[13px] font-semibold text-[var(--text-secondary)] mb-3 px-1">
           Idag
         </h3>
-        <TodayEntries entries={todayEntries} />
+        <TodayEntries entries={todayEntries} onDelete={handleDeleteEntry} />
       </div>
     </div>
   );

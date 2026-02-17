@@ -7,6 +7,7 @@ import { ReportList } from '@/components/report-list';
 
 export default function ReportsPage() {
   const [weekOffset, setWeekOffset] = useState(0);
+  const [reportRefreshKey, setReportRefreshKey] = useState(0);
 
   const currentDate = new Date();
   currentDate.setDate(currentDate.getDate() + weekOffset * 7);
@@ -76,7 +77,7 @@ export default function ReportsPage() {
           </button>
         </div>
 
-        <GenerateReportButton weekOffset={weekOffset} />
+        <GenerateReportButton weekOffset={weekOffset} onGenerated={() => setReportRefreshKey((k) => k + 1)} />
       </div>
 
       {/* Previously generated reports */}
@@ -84,7 +85,7 @@ export default function ReportsPage() {
         <h3 className="text-[13px] font-semibold text-[var(--text-secondary)] mb-3 px-1">
           Sparade rapporter
         </h3>
-        <ReportList />
+        <ReportList key={reportRefreshKey} />
       </div>
     </div>
   );

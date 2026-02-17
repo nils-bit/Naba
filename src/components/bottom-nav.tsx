@@ -194,7 +194,7 @@ export function BottomNav() {
             <Link
               key={item.href}
               href={item.href}
-              className="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[44px] px-3 py-2 transition-all duration-200 scale-tap"
+              className="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[44px] px-3 py-2 rounded-xl cursor-pointer transition-all duration-200 scale-tap hover:bg-black/[0.04]"
             >
               {item.icon(isActive)}
               <span

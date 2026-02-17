@@ -32,8 +32,8 @@ export function ReportList() {
       if (data) {
         setFiles(
           data
-            .filter((f) => f.name.endsWith('.xlsx'))
-            .map((f) => ({
+            .filter((f: { name: string }) => f.name.endsWith('.xlsx'))
+            .map((f: { name: string; created_at: string }) => ({
               name: f.name,
               created_at: f.created_at,
             }))

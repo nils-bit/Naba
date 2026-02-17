@@ -46,7 +46,7 @@ export function ProjectList({ projects, onUpdate, onArchive }: ProjectListProps)
                 />
               </div>
             ) : (
-              <div className="flex items-stretch bg-white/72 backdrop-blur-xl rounded-2xl border border-black/[0.06] shadow-sm overflow-hidden hover-lift">
+              <div className="flex items-stretch bg-white/72 backdrop-blur-xl rounded-2xl border border-black/[0.06] shadow-sm hover-lift">
                 <div
                   className="w-[4px] shrink-0 rounded-l-2xl"
                   style={{ backgroundColor: project.color }}
