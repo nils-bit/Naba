@@ -38,7 +38,7 @@ export function ProjectPicker({ open, onSelect, onClose }: ProjectPickerProps) {
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center px-4">
       {/* Backdrop with blur */}
       <div
         className="absolute inset-0 bg-black/30 backdrop-blur-sm animate-backdrop-in"
