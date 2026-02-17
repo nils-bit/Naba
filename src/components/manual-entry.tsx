@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { createClient } from '@/lib/supabase/client';
 import type { Project } from '@/types/database';
 import { ProjectPicker } from '@/components/project-picker';
@@ -37,7 +38,7 @@ export function ManualEntry({ onSaved }: ManualEntryProps) {
     setOpen(false);
   }, []);
 
-  // UX-07: Escape key closes modal
+  // Escape key closes modal
   useEffect(() => {
     if (!open) return;
     function onKeyDown(e: KeyboardEvent) {
@@ -49,6 +50,26 @@ export function ManualEntry({ onSaved }: ManualEntryProps) {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [open, handleClose]);
+
+  // Lock body scroll when sheet is open (critical for mobile Safari)
+  useEffect(() => {
+    if (!open) return;
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
+    };
+  }, [open]);
 
   async function handleSave() {
     if (!project) return;
@@ -124,24 +145,34 @@ export function ManualEntry({ onSaved }: ManualEntryProps) {
         Lägg till manuellt
       </button>
 
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center">
-          {/* Backdrop — UX-08: click outside closes */}
+      {/* Portal: render overlay outside parent transform context */}
+      {open && typeof document !== 'undefined' && createPortal(
+        <div
+          className="fixed inset-0 z-50 flex items-end justify-center"
+          style={{ height: '100dvh' }}
+        >
+          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/30 backdrop-blur-sm animate-backdrop-in"
             onClick={handleClose}
           />
 
           {/* Bottom sheet */}
-          <div className="relative w-full max-w-[640px] max-h-[85vh] bg-white/95 backdrop-blur-2xl rounded-t-2xl animate-slide-up-sheet shadow-[0_-8px_40px_rgba(0,0,0,0.15)] pb-[calc(env(safe-area-inset-bottom)+16px)]">
+          <div
+            className="relative w-full max-w-[640px] bg-white/95 backdrop-blur-2xl rounded-t-2xl animate-slide-up-sheet shadow-[0_-8px_40px_rgba(0,0,0,0.15)]"
+            style={{ maxHeight: '85dvh' }}
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Drag handle */}
             <div className="flex justify-center pt-3 pb-2">
               <div className="w-10 h-1 rounded-full bg-black/[0.15]" />
             </div>
 
-            <div className="px-5 pb-6 space-y-4 overflow-y-auto max-h-[calc(85vh-40px)]">
+            <div
+              className="px-5 space-y-4 overflow-y-auto"
+              style={{ maxHeight: 'calc(85dvh - 40px)', paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 24px)' }}
+            >
               <div className="flex items-center justify-between">
-                {/* MOB-05: nowrap title */}
                 <h3 className="text-[15px] font-semibold text-[var(--text-primary)] whitespace-nowrap">
                   Manuell tidsinmatning
                 </h3>
@@ -187,7 +218,7 @@ export function ManualEntry({ onSaved }: ManualEntryProps) {
                 )}
               </button>
 
-              {/* UX-06 / MOB-04: Responsive grid — date full width on mobile */}
+              {/* Responsive grid — date full width on mobile */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <div className="col-span-2 sm:col-span-1">
                   <label className="text-xs font-medium text-[var(--text-secondary)] mb-1.5 block">
@@ -247,8 +278,8 @@ export function ManualEntry({ onSaved }: ManualEntryProps) {
                 className="form-input text-sm"
               />
 
-              {/* Save button + UX-09: hint when disabled */}
-              <div className="space-y-2">
+              {/* Save button + hint when disabled */}
+              <div className="space-y-2 pb-2">
                 <button
                   onClick={handleSave}
                   disabled={!project || saving}
@@ -271,7 +302,8 @@ export function ManualEntry({ onSaved }: ManualEntryProps) {
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       <ProjectPicker

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { createClient } from '@/lib/supabase/client';
 import type { Project } from '@/types/database';
 
@@ -37,7 +38,8 @@ export function ProjectPicker({ open, onSelect, onClose }: ProjectPickerProps) {
     p.name.toLowerCase().includes(filter.toLowerCase())
   );
 
-  return (
+  // Portal to body so position:fixed works even inside transformed ancestors
+  return createPortal(
     <div className="fixed inset-0 z-[60] flex items-center justify-center px-4">
       {/* Backdrop with blur */}
       <div
@@ -136,6 +138,7 @@ export function ProjectPicker({ open, onSelect, onClose }: ProjectPickerProps) {
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
