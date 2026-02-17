@@ -14,13 +14,13 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 glass-nav z-50 shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
-      <div className="flex items-center justify-between h-14 px-4 max-w-[640px] mx-auto">
-        <h1 className="text-lg font-semibold text-[var(--text-primary)] tracking-tight">
+      <div className="flex items-center justify-between h-14 px-4 max-w-[640px] mx-auto min-w-0">
+        <h1 className="text-lg font-semibold text-[var(--text-primary)] tracking-tight truncate min-w-0">
           Tidsrapportering
         </h1>
         <button
           onClick={handleLogout}
-          className="w-11 h-11 flex items-center justify-center rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--hover-bg)] transition-all duration-200 press-effect"
+          className="w-11 h-11 flex-shrink-0 flex items-center justify-center rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--hover-bg)] hover-icon"
           aria-label="Logga ut"
         >
           <svg

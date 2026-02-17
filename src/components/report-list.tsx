@@ -100,7 +100,7 @@ export function ReportList() {
       {files.map((file) => (
         <div
           key={file.name}
-          className="flex items-center justify-between bg-white/72 backdrop-blur-xl rounded-2xl px-4 py-3.5 border border-black/[0.06] shadow-sm transition-all duration-200 hover:shadow-md"
+          className="flex items-center justify-between bg-white/72 backdrop-blur-xl rounded-2xl px-4 py-3.5 border border-black/[0.06] shadow-sm hover-lift"
         >
           <div className="min-w-0 flex-1">
             <div className="text-sm font-medium text-[var(--text-primary)] truncate">
@@ -114,7 +114,7 @@ export function ReportList() {
           </div>
           <button
             onClick={() => handleDownload(file.name)}
-            className="ml-3 p-2.5 rounded-xl text-[var(--primary)] hover:text-[var(--primary-hover)] hover:bg-[var(--primary)]/[0.06] transition-all duration-200 shrink-0 press-effect"
+            className="ml-3 p-2.5 rounded-xl text-[var(--primary)] hover:text-[var(--primary-hover)] hover:bg-[var(--primary)]/[0.06] shrink-0 hover-icon"
             aria-label={`Ladda ner ${file.name}`}
           >
             <svg

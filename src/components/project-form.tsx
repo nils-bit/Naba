@@ -52,31 +52,33 @@ export function ProjectForm({
         required
         className="form-input text-sm"
       />
-      <div className="flex items-center gap-2">
-        <span className="text-xs font-medium text-[var(--text-secondary)] mr-1">
-          Farg
+      <div>
+        <span className="text-xs font-medium text-[var(--text-secondary)] mb-2 block">
+          Färg
         </span>
-        {PRESET_COLORS.map((c) => (
-          <button
-            key={c}
-            type="button"
-            onClick={() => setColor(c)}
-            className="w-7 h-7 rounded-full transition-all duration-200 hover:scale-105 flex items-center justify-center"
-            style={{ backgroundColor: c }}
-            aria-label={`Välj färg ${c}`}
-          >
-            {color === c && (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            )}
-          </button>
-        ))}
+        <div className="flex flex-wrap gap-2.5">
+          {PRESET_COLORS.map((c) => (
+            <button
+              key={c}
+              type="button"
+              onClick={() => setColor(c)}
+              className="w-8 h-8 min-w-[32px] rounded-full transition-all duration-200 hover:scale-110 active:scale-95 flex items-center justify-center flex-shrink-0 shadow-sm"
+              style={{ backgroundColor: c }}
+              aria-label={`Välj färg ${c}`}
+            >
+              {color === c && (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              )}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="flex gap-2">
         <button
           type="submit"
-          className="px-5 py-2.5 bg-[var(--primary)] hover:bg-[var(--primary-hover)] active:scale-[0.97] text-white rounded-xl text-sm font-medium transition-all duration-200 shadow-sm shadow-[#007AFF]/15"
+          className="px-5 py-2.5 bg-[var(--primary)] text-white rounded-xl text-sm font-medium shadow-sm shadow-[#007AFF]/15 hover-glow"
         >
           {submitLabel}
         </button>

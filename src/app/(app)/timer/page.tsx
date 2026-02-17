@@ -191,7 +191,7 @@ export default function TimerPage() {
 
             <button
               onClick={() => setPickerOpen(true)}
-              className="w-[72px] h-[72px] rounded-full bg-gradient-to-b from-[#0A84FF] to-[#007AFF] hover:from-[#0077E6] hover:to-[#0066D6] active:scale-[0.93] text-white flex items-center justify-center transition-all duration-200 shadow-lg shadow-[#007AFF]/30"
+              className="w-[72px] h-[72px] rounded-full bg-gradient-to-b from-[#0A84FF] to-[#007AFF] text-white flex items-center justify-center shadow-lg shadow-[#007AFF]/30 hover-glow"
               aria-label="Starta timer"
             >
               <svg

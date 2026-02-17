@@ -30,7 +30,7 @@ export default function ReportsPage() {
         <div className="flex items-center justify-between mb-5">
           <button
             onClick={() => setWeekOffset((o) => o - 1)}
-            className="p-2.5 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--hover-bg)] transition-all duration-200 press-effect"
+            className="p-2.5 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--hover-bg)] hover-icon"
             aria-label="Foregaende vecka"
           >
             <svg
@@ -58,7 +58,7 @@ export default function ReportsPage() {
           </div>
           <button
             onClick={() => setWeekOffset((o) => o + 1)}
-            className="p-2.5 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--hover-bg)] transition-all duration-200 press-effect"
+            className="p-2.5 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--hover-bg)] hover-icon"
             aria-label="Nasta vecka"
           >
             <svg

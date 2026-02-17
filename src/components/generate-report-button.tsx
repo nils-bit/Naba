@@ -50,7 +50,7 @@ export function GenerateReportButton({ weekOffset }: GenerateReportButtonProps) 
     <button
       onClick={handleGenerate}
       disabled={loading}
-      className="w-full py-3.5 bg-[var(--primary)] hover:bg-[var(--primary-hover)] active:scale-[0.97] text-white rounded-xl font-medium text-sm transition-all duration-200 disabled:opacity-50 shadow-sm shadow-[#007AFF]/20 flex items-center justify-center gap-2.5"
+      className="w-full py-3.5 bg-[var(--primary)] text-white rounded-xl font-medium text-sm disabled:opacity-50 shadow-sm shadow-[#007AFF]/20 flex items-center justify-center gap-2.5 hover-glow"
     >
       {loading ? (
         <>

@@ -224,7 +224,7 @@ export function ManualEntry({ onSaved }: ManualEntryProps) {
               <button
                 onClick={handleSave}
                 disabled={!project || saving}
-                className="w-full h-12 bg-[var(--primary)] hover:bg-[var(--primary-hover)] active:scale-[0.97] text-white rounded-xl text-sm font-medium transition-all duration-200 disabled:opacity-50 shadow-sm shadow-[#007AFF]/20"
+                className="w-full h-12 bg-[var(--primary)] text-white rounded-xl text-sm font-medium disabled:opacity-50 shadow-sm shadow-[#007AFF]/20 hover-glow"
               >
                 {saving ? (
                   <span className="flex items-center justify-center gap-2">

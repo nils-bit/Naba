@@ -42,7 +42,7 @@ export function TodayEntries({ entries }: TodayEntriesProps) {
       {entries.map((entry) => (
         <div
           key={entry.id}
-          className="flex items-stretch bg-white/72 backdrop-blur-xl rounded-2xl border border-black/[0.06] shadow-sm transition-all duration-200 hover:shadow-md overflow-hidden"
+          className="flex items-stretch bg-white/72 backdrop-blur-xl rounded-2xl border border-black/[0.06] shadow-sm overflow-hidden hover-lift"
         >
           {/* Color indicator — full-height 4px bar */}
           <div
