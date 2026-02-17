@@ -50,10 +50,10 @@ export function ProjectForm({
         onChange={(e) => setName(e.target.value)}
         placeholder="Projektnamn"
         required
-        className="w-full px-4 py-3 bg-white/80 border border-black/[0.06] rounded-xl text-sm text-[#1D1D1F] placeholder:text-[#AEAEB2] focus:outline-none focus:ring-2 focus:ring-[#007AFF]/40 focus:border-transparent transition-all duration-200"
+        className="form-input text-sm"
       />
       <div className="flex items-center gap-2">
-        <span className="text-xs font-medium uppercase tracking-wider text-[#6E6E73] mr-1">
+        <span className="text-xs font-medium text-[var(--text-secondary)] mr-1">
           Farg
         </span>
         {PRESET_COLORS.map((c) => (
@@ -61,20 +61,22 @@ export function ProjectForm({
             key={c}
             type="button"
             onClick={() => setColor(c)}
-            className={`w-7 h-7 rounded-full transition-all duration-200 ${
-              color === c
-                ? 'ring-2 ring-offset-2 ring-[#1D1D1F] scale-110'
-                : 'hover:scale-105'
-            }`}
+            className="w-7 h-7 rounded-full transition-all duration-200 hover:scale-105 flex items-center justify-center"
             style={{ backgroundColor: c }}
-            aria-label={`Valj farg ${c}`}
-          />
+            aria-label={`Välj färg ${c}`}
+          >
+            {color === c && (
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            )}
+          </button>
         ))}
       </div>
       <div className="flex gap-2">
         <button
           type="submit"
-          className="px-5 py-2.5 bg-[#007AFF] hover:bg-[#0066D6] active:scale-[0.97] text-white rounded-xl text-sm font-medium transition-all duration-200 shadow-sm shadow-[#007AFF]/15"
+          className="px-5 py-2.5 bg-[var(--primary)] hover:bg-[var(--primary-hover)] active:scale-[0.97] text-white rounded-xl text-sm font-medium transition-all duration-200 shadow-sm shadow-[#007AFF]/15"
         >
           {submitLabel}
         </button>
@@ -82,7 +84,7 @@ export function ProjectForm({
           <button
             type="button"
             onClick={onCancel}
-            className="px-5 py-2.5 bg-white/72 border border-black/[0.06] text-[#6E6E73] rounded-xl text-sm font-medium hover:bg-black/[0.04] transition-all duration-200"
+            className="px-5 py-2.5 bg-white/72 border border-black/[0.06] text-[var(--text-secondary)] rounded-xl text-sm font-medium hover:bg-black/[0.04] transition-all duration-200"
           >
             Avbryt
           </button>

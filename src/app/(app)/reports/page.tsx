@@ -15,14 +15,14 @@ export default function ReportsPage() {
   const year = start.getFullYear();
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-6 animate-fade-in">
-      <h2 className="text-2xl font-semibold tracking-tight text-[#1D1D1F] mb-6">
+    <div className="max-w-[640px] mx-auto px-4 py-6 animate-fade-in">
+      <h2 className="text-[28px] font-bold tracking-tight text-[var(--text-primary)] mb-6">
         Rapporter
       </h2>
 
       {/* Generate report section */}
       <div className="glass-card p-5 mb-8">
-        <h3 className="text-xs font-medium uppercase tracking-wider text-[#6E6E73] mb-5">
+        <h3 className="text-[13px] font-semibold text-[var(--text-secondary)] mb-5">
           Generera rapport
         </h3>
 
@@ -30,7 +30,7 @@ export default function ReportsPage() {
         <div className="flex items-center justify-between mb-5">
           <button
             onClick={() => setWeekOffset((o) => o - 1)}
-            className="p-2.5 rounded-xl text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04] transition-all duration-200 press-effect"
+            className="p-2.5 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--hover-bg)] transition-all duration-200 press-effect"
             aria-label="Foregaende vecka"
           >
             <svg
@@ -47,18 +47,18 @@ export default function ReportsPage() {
             </svg>
           </button>
           <div className="text-center">
-            <span className="text-sm font-semibold text-[#1D1D1F]">
+            <span className="text-sm font-semibold text-[var(--text-primary)]">
               Vecka {weekNum}, {year}
             </span>
             {weekOffset === 0 && (
-              <span className="block text-xs text-[#007AFF] font-medium mt-0.5">
+              <span className="block text-xs text-[var(--primary)] font-medium mt-0.5">
                 Denna vecka
               </span>
             )}
           </div>
           <button
             onClick={() => setWeekOffset((o) => o + 1)}
-            className="p-2.5 rounded-xl text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04] transition-all duration-200 press-effect"
+            className="p-2.5 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--hover-bg)] transition-all duration-200 press-effect"
             aria-label="Nasta vecka"
           >
             <svg
@@ -81,7 +81,7 @@ export default function ReportsPage() {
 
       {/* Previously generated reports */}
       <div>
-        <h3 className="text-xs font-medium uppercase tracking-wider text-[#6E6E73] mb-3 px-1">
+        <h3 className="text-[13px] font-semibold text-[var(--text-secondary)] mb-3 px-1">
           Sparade rapporter
         </h3>
         <ReportList />

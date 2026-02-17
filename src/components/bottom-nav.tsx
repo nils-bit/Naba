@@ -187,14 +187,14 @@ export function BottomNav() {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 glass-nav z-50 shadow-[0_-1px_3px_rgba(0,0,0,0.08)] pb-[env(safe-area-inset-bottom)]">
-      <div className="flex justify-around items-center h-16 max-w-lg mx-auto">
+      <div className="flex justify-around items-center h-16 max-w-[640px] mx-auto">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (
             <Link
               key={item.href}
               href={item.href}
-              className="flex flex-col items-center justify-center gap-1 px-3 py-2 min-w-0 relative transition-all duration-200"
+              className="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[44px] px-3 py-2 transition-all duration-200 scale-tap"
             >
               {item.icon(isActive)}
               <span
@@ -204,10 +204,6 @@ export function BottomNav() {
               >
                 {item.label}
               </span>
-              {/* Active dot indicator */}
-              {isActive && (
-                <span className="absolute -bottom-0.5 w-1 h-1 rounded-full bg-[#007AFF]" />
-              )}
             </Link>
           );
         })}

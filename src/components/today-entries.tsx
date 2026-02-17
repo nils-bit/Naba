@@ -25,9 +25,15 @@ function formatDurationShort(startIso: string, endIso: string): string {
 export function TodayEntries({ entries }: TodayEntriesProps) {
   if (entries.length === 0) {
     return (
-      <p className="text-sm text-[#AEAEB2] text-center py-8">
-        Inga tidsregistreringar idag
-      </p>
+      <div className="flex flex-col items-center gap-2 py-10">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 text-[var(--text-tertiary)]">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
+        </svg>
+        <p className="text-sm text-[var(--text-tertiary)]">
+          Inga tidsregistreringar idag
+        </p>
+      </div>
     );
   }
 
@@ -36,33 +42,33 @@ export function TodayEntries({ entries }: TodayEntriesProps) {
       {entries.map((entry) => (
         <div
           key={entry.id}
-          className="flex items-center justify-between bg-white/72 backdrop-blur-xl rounded-2xl px-4 py-3.5 border border-black/[0.06] shadow-sm transition-all duration-200 hover:shadow-md"
+          className="flex items-stretch bg-white/72 backdrop-blur-xl rounded-2xl border border-black/[0.06] shadow-sm transition-all duration-200 hover:shadow-md overflow-hidden"
         >
-          <div className="flex items-center gap-3 min-w-0 flex-1">
-            {/* Color indicator as left accent */}
-            <div
-              className="w-1 h-8 rounded-full shrink-0"
-              style={{ backgroundColor: entry.projects.color }}
-            />
-            <div className="min-w-0">
-              <div className="text-sm font-medium text-[#1D1D1F] truncate">
+          {/* Color indicator — full-height 4px bar */}
+          <div
+            className="w-[4px] shrink-0 rounded-l-2xl"
+            style={{ backgroundColor: entry.projects.color }}
+          />
+          <div className="flex items-center justify-between flex-1 px-4 py-3.5">
+            <div className="min-w-0 flex-1">
+              <div className="text-sm font-medium text-[var(--text-primary)] truncate">
                 {entry.projects.name}
               </div>
               {entry.tag && (
-                <div className="text-xs text-[#6E6E73] truncate">{entry.tag}</div>
+                <div className="text-xs text-[var(--text-secondary)] truncate">{entry.tag}</div>
               )}
             </div>
-          </div>
-          <div className="text-right shrink-0 ml-3">
-            <div className="text-xs text-[#AEAEB2]">
-              {formatTime(entry.start_time)}
-              {entry.end_time ? ` - ${formatTime(entry.end_time)}` : ''}
-            </div>
-            {entry.end_time && (
-              <div className="text-sm font-semibold text-[#1D1D1F]">
-                {formatDurationShort(entry.start_time, entry.end_time)}
+            <div className="text-right shrink-0 ml-3">
+              {entry.end_time && (
+                <div className="text-base font-bold text-[var(--text-primary)] tabular-nums">
+                  {formatDurationShort(entry.start_time, entry.end_time)}
+                </div>
+              )}
+              <div className="text-xs text-[var(--text-tertiary)]">
+                {formatTime(entry.start_time)}
+                {entry.end_time ? ` – ${formatTime(entry.end_time)}` : ''}
               </div>
-            )}
+            </div>
           </div>
         </div>
       ))}

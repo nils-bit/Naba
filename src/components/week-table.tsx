@@ -77,9 +77,17 @@ export function WeekTable({ entries, weekStart }: WeekTableProps) {
 
   if (rows.length === 0) {
     return (
-      <p className="text-sm text-[#AEAEB2] text-center py-10">
-        Inga tidsregistreringar denna vecka
-      </p>
+      <div className="flex flex-col items-center gap-2 py-12">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 text-[var(--text-tertiary)]">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+        <p className="text-sm text-[var(--text-tertiary)]">
+          Ingen tid registrerad denna vecka
+        </p>
+      </div>
     );
   }
 
@@ -89,18 +97,18 @@ export function WeekTable({ entries, weekStart }: WeekTableProps) {
         <table className="w-full text-sm min-w-[600px]">
           <thead>
             <tr className="border-b border-black/[0.06]">
-              <th className="text-left px-4 py-3 text-xs font-medium uppercase tracking-wider text-[#6E6E73]">
+              <th className="text-left px-4 py-3 text-xs font-medium text-[var(--text-secondary)]">
                 Projekt
               </th>
               {[0, 1, 2, 3, 4, 5, 6].map((i) => (
                 <th
                   key={i}
-                  className="text-right px-2 py-3 text-xs font-medium uppercase tracking-wider text-[#6E6E73] w-16"
+                  className="text-right px-2 py-3 text-xs font-medium text-[var(--text-secondary)] w-16"
                 >
                   {getDayName(i)}
                 </th>
               ))}
-              <th className="text-right px-4 py-3 text-xs font-medium uppercase tracking-wider text-[#6E6E73] w-16">
+              <th className="text-right px-4 py-3 text-xs font-medium text-[var(--text-secondary)] w-16">
                 Total
               </th>
             </tr>
@@ -119,31 +127,31 @@ export function WeekTable({ entries, weekStart }: WeekTableProps) {
                       className="w-2 h-2 rounded-full shrink-0"
                       style={{ backgroundColor: row.projectColor }}
                     />
-                    <span className="text-[#1D1D1F] font-medium truncate">
+                    <span className="text-[var(--text-primary)] font-medium truncate">
                       {row.projectName}
                     </span>
                   </div>
                 </td>
                 {row.days.map((h, i) => (
-                  <td key={i} className="text-right px-2 py-3 text-[#6E6E73] tabular-nums">
+                  <td key={i} className="text-right px-2 py-3 text-[var(--text-secondary)] tabular-nums">
                     {fmtHours(h)}
                   </td>
                 ))}
-                <td className="text-right px-4 py-3 font-semibold text-[#1D1D1F] tabular-nums">
+                <td className="text-right px-4 py-3 font-semibold text-[var(--text-primary)] tabular-nums">
                   {fmtHours(row.total)}
                 </td>
               </tr>
             ))}
           </tbody>
           <tfoot>
-            <tr className="bg-[#007AFF]/[0.04]">
-              <td className="px-4 py-3 font-semibold text-[#1D1D1F]">Totalt</td>
+            <tr className="bg-[var(--primary)]/[0.04]">
+              <td className="px-4 py-3 font-semibold text-[var(--text-primary)]">Totalt</td>
               {dayTotals.map((h, i) => (
-                <td key={i} className="text-right px-2 py-3 font-semibold text-[#1D1D1F] tabular-nums">
+                <td key={i} className="text-right px-2 py-3 font-semibold text-[var(--text-primary)] tabular-nums">
                   {fmtHours(h)}
                 </td>
               ))}
-              <td className="text-right px-4 py-3 font-bold text-[#007AFF] tabular-nums">
+              <td className="text-right px-4 py-3 font-bold text-[var(--primary)] tabular-nums">
                 {fmtHours(grandTotal)}
               </td>
             </tr>

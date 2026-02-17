@@ -70,7 +70,7 @@ export function TagInput({ value, onChange }: TagInputProps) {
           }}
           onFocus={() => setShowSuggestions(true)}
           placeholder="Tagg (valfri)"
-          className="w-full pl-10 pr-4 py-3 bg-white/72 backdrop-blur-xl border border-black/[0.06] rounded-xl text-sm text-[#1D1D1F] placeholder:text-[#AEAEB2] focus:outline-none focus:ring-2 focus:ring-[#007AFF]/40 focus:border-transparent transition-all duration-200"
+          className="form-input pl-10 text-sm"
         />
       </div>
       {showSuggestions && filtered.length > 0 && (
@@ -83,7 +83,7 @@ export function TagInput({ value, onChange }: TagInputProps) {
                 onChange(tag.name);
                 setShowSuggestions(false);
               }}
-              className="w-full text-left px-4 py-2.5 text-sm text-[#1D1D1F] hover:bg-black/[0.04] transition-colors duration-150 first:rounded-t-xl last:rounded-b-xl"
+              className="w-full text-left px-4 py-2.5 text-sm text-[var(--text-primary)] hover:bg-black/[0.04] transition-colors duration-150 first:rounded-t-xl last:rounded-b-xl"
             >
               {tag.name}
             </button>

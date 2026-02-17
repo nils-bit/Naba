@@ -7,6 +7,7 @@ import { ProjectPicker } from '@/components/project-picker';
 import { TimerDisplay } from '@/components/timer-display';
 import { TagInput } from '@/components/tag-input';
 import { TodayEntries } from '@/components/today-entries';
+import { ManualEntry } from '@/components/manual-entry';
 
 export default function TimerPage() {
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -135,14 +136,34 @@ export default function TimerPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center py-20">
-        <div className="w-6 h-6 border-2 border-[#007AFF] border-t-transparent rounded-full animate-spin" />
+      <div className="max-w-[640px] mx-auto px-4 py-6 space-y-4">
+        {/* Hero skeleton */}
+        <div className="flex flex-col items-center gap-5 py-12">
+          <div className="skeleton w-24 h-4 rounded-full" />
+          <div className="skeleton w-[72px] h-[72px] rounded-full" />
+          <div className="skeleton w-20 h-4 rounded-full" />
+        </div>
+        {/* Entry skeletons */}
+        <div className="skeleton w-16 h-4 rounded mb-3" />
+        {[1, 2, 3].map((i) => (
+          <div key={i} className="flex items-center gap-3 bg-white/72 rounded-2xl px-4 py-3.5 border border-black/[0.06]">
+            <div className="skeleton w-1 h-10 rounded-full" />
+            <div className="flex-1 space-y-2">
+              <div className="skeleton w-28 h-4 rounded" />
+              <div className="skeleton w-16 h-3 rounded" />
+            </div>
+            <div className="space-y-2">
+              <div className="skeleton w-12 h-4 rounded ml-auto" />
+              <div className="skeleton w-20 h-3 rounded" />
+            </div>
+          </div>
+        ))}
       </div>
     );
   }
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-6">
+    <div className="max-w-[640px] mx-auto px-4 py-6">
       {activeEntry && activeProject ? (
         <div className="space-y-4 animate-fade-in">
           <TimerDisplay
@@ -159,34 +180,36 @@ export default function TimerPage() {
               value={note}
               onChange={(e) => setNote(e.target.value)}
               placeholder="Anteckning (valfri)"
-              className="w-full px-4 py-3 bg-white/72 backdrop-blur-xl border border-black/[0.06] rounded-xl text-sm text-[#1D1D1F] placeholder:text-[#AEAEB2] focus:outline-none focus:ring-2 focus:ring-[#007AFF]/40 focus:border-transparent transition-all duration-200"
+              className="form-input text-sm"
             />
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center gap-5 py-16 animate-slide-up">
-          <p className="text-[#6E6E73] text-sm">Ingen timer igang</p>
+        <div className="animate-slide-up">
+          <div className="flex flex-col items-center gap-5 py-12">
+            <p className="text-[var(--text-secondary)] text-sm">Ingen timer igång</p>
 
-          {/* Things 3-style play button with pulsing ring */}
-          <div className="relative">
-            <div className="absolute inset-0 -m-4 rounded-full timer-circle animate-pulse-ring" />
             <button
               onClick={() => setPickerOpen(true)}
-              className="relative w-24 h-24 rounded-full bg-[#007AFF] hover:bg-[#0066D6] active:scale-[0.93] text-white flex items-center justify-center transition-all duration-200 shadow-lg shadow-[#007AFF]/25"
+              className="w-[72px] h-[72px] rounded-full bg-gradient-to-b from-[#0A84FF] to-[#007AFF] hover:from-[#0077E6] hover:to-[#0066D6] active:scale-[0.93] text-white flex items-center justify-center transition-all duration-200 shadow-lg shadow-[#007AFF]/30"
               aria-label="Starta timer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-10 h-10 ml-1"
+                className="w-7 h-7 ml-0.5"
               >
                 <polygon points="5 3 19 12 5 21 5 3" />
               </svg>
             </button>
+
+            <p className="text-[var(--text-primary)] font-medium text-sm">Starta timer</p>
           </div>
 
-          <p className="text-[#1D1D1F] font-medium text-sm">Starta timer</p>
+          <div className="flex justify-center mb-6">
+            <ManualEntry onSaved={fetchTodayEntries} />
+          </div>
         </div>
       )}
 
@@ -198,7 +221,7 @@ export default function TimerPage() {
 
       {/* Today's entries */}
       <div className="mt-10">
-        <h3 className="text-xs font-medium uppercase tracking-wider text-[#6E6E73] mb-3 px-1">
+        <h3 className="text-[13px] font-semibold text-[var(--text-secondary)] mb-3 px-1">
           Idag
         </h3>
         <TodayEntries entries={todayEntries} />

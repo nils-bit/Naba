@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
+
 import { createClient } from '@/lib/supabase/client';
 import type { Project } from '@/types/database';
 import { ProjectForm } from '@/components/project-form';
@@ -9,6 +10,7 @@ import { ProjectList } from '@/components/project-list';
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showForm, setShowForm] = useState(false);
   const supabase = createClient();
 
   const fetchProjects = useCallback(async () => {
@@ -66,24 +68,60 @@ export default function ProjectsPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center py-20">
-        <div className="w-6 h-6 border-2 border-[#007AFF] border-t-transparent rounded-full animate-spin" />
+      <div className="max-w-[640px] mx-auto px-4 py-6 space-y-6">
+        <div className="skeleton w-32 h-8 rounded" />
+        <div className="glass-card p-5 space-y-4">
+          <div className="skeleton w-24 h-4 rounded" />
+          <div className="skeleton h-12 rounded-xl" />
+          <div className="flex gap-2">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+              <div key={i} className="skeleton w-7 h-7 rounded-full" />
+            ))}
+          </div>
+        </div>
+        {[1, 2, 3].map((i) => (
+          <div key={i} className="glass-card p-4 flex items-center gap-3">
+            <div className="skeleton w-4 h-4 rounded-full" />
+            <div className="skeleton flex-1 h-4 rounded" />
+            <div className="skeleton w-6 h-6 rounded" />
+          </div>
+        ))}
       </div>
     );
   }
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-6 animate-fade-in">
-      <h2 className="text-2xl font-semibold tracking-tight text-[#1D1D1F] mb-6">
+    <div className="max-w-[640px] mx-auto px-4 py-6 animate-fade-in">
+      <h2 className="text-[28px] font-bold tracking-tight text-[var(--text-primary)] mb-6">
         Projekt
       </h2>
 
-      <div className="glass-card p-5 mb-6">
-        <h3 className="text-xs font-medium uppercase tracking-wider text-[#6E6E73] mb-4">
+      {showForm ? (
+        <div className="glass-card p-5 mb-6 animate-slide-up">
+          <h3 className="text-[13px] font-semibold text-[var(--text-secondary)] mb-4">
+            Nytt projekt
+          </h3>
+          <ProjectForm
+            onSubmit={(name, color) => {
+              handleCreate(name, color);
+              setShowForm(false);
+            }}
+            onCancel={() => setShowForm(false)}
+            submitLabel="Lägg till"
+          />
+        </div>
+      ) : (
+        <button
+          onClick={() => setShowForm(true)}
+          className="w-full mb-6 py-3.5 border-2 border-dashed border-black/[0.1] rounded-2xl text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-black/[0.2] hover:bg-[var(--hover-bg)] transition-all duration-200 flex items-center justify-center gap-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
           Nytt projekt
-        </h3>
-        <ProjectForm onSubmit={handleCreate} submitLabel="Lagg till" />
-      </div>
+        </button>
+      )}
 
       <ProjectList
         projects={projects}
