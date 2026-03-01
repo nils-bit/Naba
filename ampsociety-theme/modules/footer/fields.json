@@ -1,0 +1,95 @@
+[
+  {
+    "name": "logo",
+    "label": "Footer Logo",
+    "type": "image",
+    "default": {
+      "src": "https://www.ampsociety.com/storage/3428AFF37FCBE3A510BDC37C0D044C403C4E9F255283D0425624453E16DBB7B1/0d3699fbf826492b82ff7f6718178a83/svg/media/a4ec4baa46d34377ab7814d9b3e54924/logo-light.svg",
+      "alt": "AmpSociety"
+    }
+  },
+  {
+    "name": "badge",
+    "label": "Badge / Certification Image",
+    "type": "image",
+    "default": {
+      "src": "https://www.ampsociety.com/storage/63F2D2F7F653A3DFE203619E817FB60970E8B4B5831791D8C8318473A341BE57/159a171930ed42748704685bf8f7aef6/png/media/ec0526bd461d42dc81c83e026d3050e6/EME%20Member%20Transparent.png?io=yes&optimize=medium&width=200&height=88&fit=bounds&format=png",
+      "alt": "EME Member"
+    }
+  },
+  {
+    "name": "link_columns",
+    "label": "Link Columns",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 4,
+      "default": 2
+    },
+    "children": [
+      {
+        "name": "title",
+        "label": "Column Title",
+        "type": "text",
+        "default": "Column Title"
+      },
+      {
+        "name": "links",
+        "label": "Links",
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 8,
+          "default": 4
+        },
+        "children": [
+          {
+            "name": "label",
+            "label": "Label",
+            "type": "text",
+            "default": "Link"
+          },
+          {
+            "name": "url",
+            "label": "URL",
+            "type": "link",
+            "default": {
+              "url": {
+                "href": "#",
+                "type": "EXTERNAL"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "default": [
+      {
+        "title": "Kontakt & Villkor",
+        "links": [
+          { "label": "Kontakt", "url": { "url": { "href": "/sv/society/kontakt", "type": "EXTERNAL" } } },
+          { "label": "Hitta \u00e5terf\u00f6rs\u00e4ljare", "url": { "url": { "href": "/sv/support/hitta-aterforaljare", "type": "EXTERNAL" } } },
+          { "label": "Allm\u00e4nna villkor", "url": { "url": { "href": "/sv/allmanna-villkor", "type": "EXTERNAL" } } },
+          { "label": "Cookie Policy", "url": { "url": { "href": "/sv/cookie-policy", "type": "EXTERNAL" } } },
+          { "label": "Inst\u00e4llningar f\u00f6r cookies", "url": { "url": { "href": "#", "type": "EXTERNAL" } } }
+        ]
+      },
+      {
+        "title": "Om AmpSociety",
+        "links": [
+          { "label": "Laddsystem", "url": { "url": { "href": "/sv/laddsystem", "type": "EXTERNAL" } } },
+          { "label": "Om oss", "url": { "url": { "href": "/sv/society/om-ampsociety", "type": "EXTERNAL" } } },
+          { "label": "Karri\u00e4r", "url": { "url": { "href": "/sv/society/karriar", "type": "EXTERNAL" } } },
+          { "label": "FAQ", "url": { "url": { "href": "/sv/support/faq", "type": "EXTERNAL" } } },
+          { "label": "Downloads", "url": { "url": { "href": "/sv/support/downloads", "type": "EXTERNAL" } } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "copyright",
+    "label": "Copyright Text",
+    "type": "text",
+    "default": "\u00a9 2025 AmpSociety International AB"
+  }
+]

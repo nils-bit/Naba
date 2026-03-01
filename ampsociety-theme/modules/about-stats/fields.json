@@ -1,0 +1,61 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "default": "Vi \u00e4r AmpSociety"
+  },
+  {
+    "name": "intro_text",
+    "label": "Intro Text",
+    "type": "richtext",
+    "default": "<p>Med r\u00f6tterna i ChargeNode, Sveriges st\u00f6rsta ladd\u00f6perat\u00f6r med \u00f6ver 40,000 laddpunkter, s\u00e5 vet vi vad som kr\u00e4vs f\u00f6r att bygga och drifta p\u00e5litliga och storskaliga laddsystem.</p>"
+  },
+  {
+    "name": "stats",
+    "label": "Stat Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 4,
+      "default": 2
+    },
+    "children": [
+      {
+        "name": "number",
+        "label": "Stat Number",
+        "type": "text",
+        "default": "60 000"
+      },
+      {
+        "name": "label",
+        "label": "Stat Label",
+        "type": "richtext",
+        "default": "<p>s\u00e5lda laddpunkter av tidigare produktgeneration.</p>"
+      },
+      {
+        "name": "image",
+        "label": "Background Image",
+        "type": "image"
+      }
+    ],
+    "default": [
+      {
+        "number": "60 000",
+        "label": "<p>s\u00e5lda laddpunkter av tidigare produktgeneration.</p>",
+        "image": {
+          "src": "https://www.ampsociety.com/storage/D883E6E087461CCCBA8A7D28420946E1F65FFEA69A385FC7BDC5562694C18B21/0194d7f21a4c47128ab6e8cff5122403/jpg/media/c89339d10cb44911839b3807fb5f579d/CH_0272.jpeg?io=yes&optimize=medium&width=800&height=500&fit=crop&format=jpeg",
+          "alt": "Charging installations"
+        }
+      },
+      {
+        "number": "5 \u00e5r",
+        "label": "<p>av samlad erfarenhet fr\u00e5n Sveriges ledande ladd\u00f6perat\u00f6r.</p>",
+        "image": {
+          "src": "https://www.ampsociety.com/storage/46861AF24EC01C35C9378175CFC246509B82866BC64CB873484D6C2FA0E41347/fd26108979134fbf81ff8b4fd647ac63/jpg/media/8efa5e360da0466d83fe68c14ab52d1b/Joakim_Blomquist-4025.jpeg?io=yes&optimize=medium&width=800&height=500&fit=crop&format=jpeg",
+          "alt": "Team AmpSociety"
+        }
+      }
+    ]
+  }
+]

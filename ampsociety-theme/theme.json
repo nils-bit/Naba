@@ -1,0 +1,25 @@
+{
+  "label": "AmpSociety Theme",
+  "preview_path": "/",
+  "screenshot_path": "./images/template-previews/home.png",
+  "author_name": "Purasu",
+  "is_available_for_new_content": true,
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "(max-width: 767px)"
+    },
+    {
+      "name": "tablet",
+      "mediaQuery": "(min-width: 768px) and (max-width: 1023px)"
+    },
+    {
+      "name": "desktop-small",
+      "mediaQuery": "(min-width: 1024px) and (max-width: 1439px)"
+    },
+    {
+      "name": "desktop",
+      "mediaQuery": "(min-width: 1440px)"
+    }
+  ]
+}

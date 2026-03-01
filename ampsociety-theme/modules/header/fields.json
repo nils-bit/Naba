@@ -1,0 +1,147 @@
+[
+  {
+    "name": "logo_dark",
+    "label": "Logo (Dark — for light backgrounds)",
+    "type": "image",
+    "default": {
+      "src": "https://www.ampsociety.com/storage/F87EA10171D5DACEA26F38353357872117AE4D3E412A85E5D5C0BBE926349E59/f24bd29b90a346ed8903999b1b5faf41/svg/media/27b73b75e7464d88ada756d5e4a4e9c4/logo-dark.svg",
+      "alt": "AmpSociety"
+    }
+  },
+  {
+    "name": "logo_light",
+    "label": "Logo (Light — for dark backgrounds)",
+    "type": "image",
+    "default": {
+      "src": "https://www.ampsociety.com/storage/3428AFF37FCBE3A510BDC37C0D044C403C4E9F255283D0425624453E16DBB7B1/0d3699fbf826492b82ff7f6718178a83/svg/media/a4ec4baa46d34377ab7814d9b3e54924/logo-light.svg",
+      "alt": "AmpSociety"
+    }
+  },
+  {
+    "name": "nav_items",
+    "label": "Navigation Items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 6
+    },
+    "children": [
+      {
+        "name": "label",
+        "label": "Label",
+        "type": "text",
+        "default": "Nav Item"
+      },
+      {
+        "name": "link",
+        "label": "Link",
+        "type": "link",
+        "default": {
+          "url": {
+            "href": "#",
+            "type": "EXTERNAL"
+          }
+        }
+      },
+      {
+        "name": "children",
+        "label": "Dropdown Items",
+        "type": "group",
+        "occurrence": {
+          "min": 0,
+          "max": 6
+        },
+        "children": [
+          {
+            "name": "label",
+            "label": "Label",
+            "type": "text",
+            "default": "Sub Item"
+          },
+          {
+            "name": "link",
+            "label": "Link",
+            "type": "link",
+            "default": {
+              "url": {
+                "href": "#",
+                "type": "EXTERNAL"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "default": [
+      { "label": "Laddsystem", "link": { "url": { "href": "/sv/laddsystem", "type": "EXTERNAL" } }, "children": [] },
+      { "label": "Installation", "link": { "url": { "href": "/sv/installation", "type": "EXTERNAL" } }, "children": [] },
+      {
+        "label": "Support",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" } },
+        "children": [
+          { "label": "Hitta \u00e5terf\u00f6rs\u00e4ljare", "link": { "url": { "href": "/sv/support/hitta-aterforaljare", "type": "EXTERNAL" } } },
+          { "label": "FAQ", "link": { "url": { "href": "/sv/support/faq", "type": "EXTERNAL" } } },
+          { "label": "Downloads", "link": { "url": { "href": "/sv/support/downloads", "type": "EXTERNAL" } } }
+        ]
+      },
+      { "label": "Nyheter", "link": { "url": { "href": "/sv/nyheter", "type": "EXTERNAL" } }, "children": [] },
+      {
+        "label": "Society",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" } },
+        "children": [
+          { "label": "Om AmpSociety", "link": { "url": { "href": "/sv/society/om-ampsociety", "type": "EXTERNAL" } } },
+          { "label": "Karri\u00e4r", "link": { "url": { "href": "/sv/society/karriar", "type": "EXTERNAL" } } },
+          { "label": "Kvalitet & h\u00e5llbarhet", "link": { "url": { "href": "/sv/society/kvalitet-och-hallbarhet", "type": "EXTERNAL" } } },
+          { "label": "Downloads", "link": { "url": { "href": "/sv/society/downloads", "type": "EXTERNAL" } } },
+          { "label": "Kontakt", "link": { "url": { "href": "/sv/society/kontakt", "type": "EXTERNAL" } } }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "cta_label",
+    "label": "CTA Button Label",
+    "type": "text",
+    "default": "Kontakt"
+  },
+  {
+    "name": "cta_link",
+    "label": "CTA Button Link",
+    "type": "link",
+    "default": {
+      "url": {
+        "href": "/sv/society/kontakt",
+        "type": "EXTERNAL"
+      }
+    }
+  },
+  {
+    "name": "lang_label_1",
+    "label": "Language 1 Label",
+    "type": "text",
+    "default": "Sve"
+  },
+  {
+    "name": "lang_link_1",
+    "label": "Language 1 Link",
+    "type": "link",
+    "default": {
+      "url": { "href": "/sv", "type": "EXTERNAL" }
+    }
+  },
+  {
+    "name": "lang_label_2",
+    "label": "Language 2 Label",
+    "type": "text",
+    "default": "Eng"
+  },
+  {
+    "name": "lang_link_2",
+    "label": "Language 2 Link",
+    "type": "link",
+    "default": {
+      "url": { "href": "/en", "type": "EXTERNAL" }
+    }
+  }
+]

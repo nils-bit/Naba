@@ -1,0 +1,63 @@
+[
+  {
+    "name": "slides",
+    "label": "USP Slides",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "number",
+        "label": "Slide Number",
+        "type": "number",
+        "default": 1
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Title"
+      },
+      {
+        "name": "body",
+        "label": "Body Text",
+        "type": "text",
+        "default": "Description"
+      },
+      {
+        "name": "background_image",
+        "label": "Background Image",
+        "type": "image"
+      }
+    ],
+    "default": [
+      {
+        "number": 1,
+        "title": "P\u00e5litligt.",
+        "body": "Med centraliserad systemarkitektur och sj\u00e4lvl\u00e4kande programvara levererar Amp5 minst 99% upptid.",
+        "background_image": { "src": "https://www.ampsociety.com/storage/E1AAF18EE3843A6E18D382523D6B0428F102BEB68B5D2D37853F865840AB6722/ed6e27e26f21472e85b78d4bfd9b3735/jpg/media/8274387ed03b40d18562d4d2f0ab8172/AmpSociety_G5_PowerCentral_1920px.jpeg?io=yes&optimize=medium&width=1200&height=696&fit=crop&format=jpeg", "alt": "Amp5 PowerCentral" }
+      },
+      {
+        "number": 2,
+        "title": "H\u00e5llbart.",
+        "body": "Med h\u00f6gkvalitativa systemkomponenter skyddade i en \u00e5tervunnen aluminiumprofil garanterar Amp5 h\u00e5llbara ekonomiska f\u00f6rdelar.",
+        "background_image": { "src": "https://www.ampsociety.com/storage/A20822C07D25042C090CAD47F70CDB8143F4D941D0ABF73D69386BE6A25251F5/0cadf6e8115449b79c680a4d23e4f538/jpg/media/9cd53f01b49548c0a9429f571d596769/AmpSociety_G5_SmartModule_Front_Price_1920px.jpeg?io=yes&optimize=medium&width=1200&height=696&fit=crop&format=jpeg", "alt": "Amp5 SmartModule" }
+      },
+      {
+        "number": 3,
+        "title": "Enkelt.",
+        "body": "Trots all avancerad teknik \u00e4r Amp5 utformad f\u00f6r att vara extremt enkel att anv\u00e4nda, installera och skala.",
+        "background_image": { "src": "https://www.ampsociety.com/storage/6122725130F2F097A73219570A33C31B4AB65E1EECC864FE071BFCDC473D5F37/3ea40ee93fc840b7bd866b3f7bd7c7c4/jpg/media/fe50cb714b7a4198890ac009b384b8eb/AmpSociety_G5_SmartModule_CU_Click_1920px.jpeg?io=yes&optimize=medium&width=1200&height=696&fit=crop&format=jpeg", "alt": "Amp5 click install" }
+      },
+      {
+        "number": 4,
+        "title": "Anpassat.",
+        "body": "L\u00e5t Amp5 st\u00e5 ut eller sm\u00e4lta in p\u00e5 din parkering. Oavsett vad du v\u00e4ljer s\u00e5 best\u00e5r alla tekniska f\u00f6rdelar.",
+        "background_image": { "src": "https://www.ampsociety.com/storage/58D986D40B2EBC907441C7DDDA85D1247F12F08567989B5C1F0F99A57180735E/d86c158166d84cb083c0fe970cf1a6ab/jpg/media/0029cddbd5d043a3b492feffc667811c/AmpSociety_G5_SmartModule_LED_1920px.jpeg?io=yes&optimize=medium&width=1200&height=696&fit=crop&format=jpeg", "alt": "Amp5 LED" }
+      }
+    ]
+  }
+]

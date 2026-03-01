@@ -1,0 +1,92 @@
+[
+  {
+    "name": "section_heading",
+    "label": "Section Heading",
+    "type": "text",
+    "default": "Nyheter"
+  },
+  {
+    "name": "cards",
+    "label": "News Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 7
+    },
+    "children": [
+      {
+        "name": "image",
+        "label": "Image",
+        "type": "image"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "News title"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Description text"
+      },
+      {
+        "name": "link",
+        "label": "Link",
+        "type": "link",
+        "default": {
+          "url": {
+            "href": "#",
+            "type": "EXTERNAL"
+          }
+        }
+      }
+    ],
+    "default": [
+      {
+        "image": { "src": "https://www.ampsociety.com/storage/993C3783F24EA76471E793F3491BFE0730A6BAEFFD802A86D8547AD9C3E32CD7/524cfdee5ff24941b8ebedcde7911a89/jpg/media/c9a6ec16641b44a9bacfaa42c9e4a04f/AmpSociety_inspiration_Stena_webb_1.jpeg?io=yes&optimize=medium&width=800&height=500&fit=crop&format=jpeg", "alt": "Stena Fastigheter" },
+        "title": "Stena Fastigheter v\u00e4ljer Amp5 n\u00e4r de bygger ut",
+        "description": "Under 2025 g\u00e5r Stena Fastigheter Malm\u00f6 fr\u00e5n 100 laddbara parkeringsplatser till 300 i b\u00f6rjan av 2026...",
+        "link": { "url": { "href": "/sv/nyheter/Stena-Fastigheter-v\u00e4ljer-Amp5-n\u00e4r-de-bygger-ut", "type": "EXTERNAL" } }
+      },
+      {
+        "image": { "src": "https://www.ampsociety.com/storage/3A90EA4F066372281986AFE50B3A0A1168A0FF6F33FFCE3302A0863A190DBFDC/9f8cbb00335b4b2c9a0a0ba7edb14655/jpeg/media/df13959a7dc44b10925d016c3b43e6f5/RoxResort-Press-Hi-1.jpeg?io=yes&optimize=medium&width=800&height=500&fit=crop&format=jpeg", "alt": "Rox Resort" },
+        "title": "Ladda om med AmpSociety p\u00e5 Rox Resort, Danmark",
+        "description": "ESS Groups senaste destination, Rox Resort, v\u00e4lkomnar nu sina g\u00e4ster med en spektakul\u00e4r hotellupplevelse...",
+        "link": { "url": { "href": "/sv/nyheter/ladda-om-med-ampsociety-pa-rox-resort-danmark", "type": "EXTERNAL" } }
+      },
+      {
+        "image": { "src": "https://www.ampsociety.com/storage/2EFC76B0BD78767DFD571EA841610C02B825FC7FA39CD4C9473E82887E858945/0a2308416f5645209749a22903c4715c/jpg/media/86fdf424bd3c432d9d6f435eb4a9f40b/AmpSociety_inspiration_8-webb.jpeg?io=yes&optimize=medium&width=800&height=500&fit=crop&format=jpeg", "alt": "Slottsm\u00f6llan" },
+        "title": "Slottsm\u00f6llan \u2013 elbilsladdning med respekt f\u00f6r kulturarvet",
+        "description": "K-m\u00e4rkta milj\u00f6er och modern elbilsladdning \u2013 g\u00e5r det att kombinera?...",
+        "link": { "url": { "href": "/sv/nyheter/slottsmollan-elbilsladdning-med-respekt-for-kulturarvet", "type": "EXTERNAL" } }
+      },
+      {
+        "image": { "src": "https://www.ampsociety.com/storage/E24A327AE4F501D15588D2963770D308034C483658ED9D2C254A898034E8C675/120441d1d297496eb18d7e974d66c52f/jpg/media/783fec319083430db66506c9ee40a912/AmpSociety_inspiration_Wihlborgs_webb_4.jpeg?io=yes&optimize=medium&width=800&height=500&fit=crop&format=jpeg", "alt": "Wihlborgs Slagthuset" },
+        "title": "Wihlborgs valde Amp5 till Slagthuset i Malm\u00f6",
+        "description": "N\u00e4r \u00d6resundsregionens ledande fastighetsbolag inom kommersiella fastigheter installerade nya laddpunkter...",
+        "link": { "url": { "href": "/sv/nyheter/wihlborgs-valde-amp5-till-slagthuset-i-malmo", "type": "EXTERNAL" } }
+      },
+      {
+        "image": { "src": "https://www.ampsociety.com/storage/3ED5F721A433662D811DD6A50179E9CE5D31E6DDC7BD08E553C7506D9301F2D8/f8860915c0fd4f9e9ec9efda99654222/jpg/media/f5c1b547addb4d3fa93fa2843d1a6af8/The%20reef-webb-hero.jpeg?io=yes&optimize=medium&width=800&height=500&fit=crop&format=jpeg", "alt": "The Reef" },
+        "title": "AmpSociety expanderar till Danmark",
+        "description": "Ett nytt Amp5-laddningssystem har installerats p\u00e5 Stena Lines legend\u00e4riska familjehotell i Frederikshavn.",
+        "link": { "url": { "href": "/sv/nyheter/AmpSociety-expanderar-till-Danmark", "type": "EXTERNAL" } }
+      },
+      {
+        "image": { "src": "https://www.ampsociety.com/storage/3D965123D36C06C59E6E2E399D523870298B344BBF8D9A6F6A296D688F3F8B2B/8366300db84f467bba6cfb4f7b862318/png/media/609f1216149a404c9482648428be56be/Ska%CC%88rmavbild%202025-10-23%20kl.%2021.45.06.png?io=yes&optimize=medium&width=800&height=500&fit=crop&format=png", "alt": "LaddaTillsammans" },
+        "title": "AmpSociety inleder partnerskap med LaddaTillsammans",
+        "description": "AmpSociety International AB har tecknat ett strategiskt partnerskap med LaddaTillsammans...",
+        "link": { "url": { "href": "/sv/nyheter/ampsociety-inleder-partnerskap-med-laddatillsammans", "type": "EXTERNAL" } }
+      },
+      {
+        "image": { "src": "https://www.ampsociety.com/storage/6B6CFC0B791FDDCD13E667A784DA89B22A9EF14529496326BC4160C4A127EF4F/d2e8b85b399848d28ad8b98a62ae6ef1/jpg/media/c4d7e84456c3466e8648230f7e7f2939/Masthugget_uollrg_e_improve%2Ce_sharpen.jpeg?io=yes&optimize=medium&width=800&height=500&fit=crop&format=jpeg", "alt": "Brf Masthugget" },
+        "title": "AmpSociety levererar 550 laddplatser till ChargeNode och Brf Masthugget",
+        "description": "AmpSociety har tillsammans med ChargeNode och Brf Masthugget tagit ett stort steg...",
+        "link": { "url": { "href": "/sv/nyheter/ampsociety-levererar-550-laddplatser-till-chargenode-och-brf-masthugget", "type": "EXTERNAL" } }
+      }
+    ]
+  }
+]

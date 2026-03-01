@@ -1,0 +1,52 @@
+[
+  {
+    "type": "group",
+    "name": "theme_settings",
+    "label": "Theme Settings",
+    "children": [
+      {
+        "type": "color",
+        "name": "bg_primary",
+        "label": "Primary Background",
+        "default": {
+          "color": "#0a0a0a"
+        }
+      },
+      {
+        "type": "color",
+        "name": "bg_secondary",
+        "label": "Secondary Background",
+        "default": {
+          "color": "#111111"
+        }
+      },
+      {
+        "type": "color",
+        "name": "text_primary",
+        "label": "Primary Text Color",
+        "default": {
+          "color": "#ffffff"
+        }
+      },
+      {
+        "type": "color",
+        "name": "text_secondary",
+        "label": "Secondary Text Color",
+        "default": {
+          "color": "#b0b0b0"
+        }
+      },
+      {
+        "type": "font",
+        "name": "primary_font",
+        "label": "Primary Font",
+        "default": {
+          "font": "Inter",
+          "fallback": "Helvetica Neue, Arial, sans-serif",
+          "font_set": "GOOGLE",
+          "size": 16
+        }
+      }
+    ]
+  }
+]

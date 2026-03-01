@@ -1,0 +1,34 @@
+{# Hero Video Module #}
+<section class="amp-hero" data-module="hero-video">
+  {# Background video #}
+  <div class="amp-hero__video-wrap">
+    <video
+      class="amp-hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      {% if module.video_poster.src %}poster="{{ module.video_poster.src }}"{% endif %}
+    >
+      <source src="{{ module.video_url }}" type="video/mp4">
+    </video>
+    <div class="amp-hero__overlay"></div>
+  </div>
+
+  {# Content #}
+  <div class="amp-hero__content amp-container">
+    {% if module.subheading %}
+      <p class="amp-hero__label label-text amp-reveal">{{ module.subheading }}</p>
+    {% endif %}
+    <h1 class="amp-hero__heading amp-reveal amp-reveal-delay-1">{{ module.heading }}</h1>
+  </div>
+
+  {# Scroll indicator #}
+  {% if module.show_scroll_indicator %}
+    <div class="amp-hero__scroll-indicator" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  {% endif %}
+</section>

@@ -1,0 +1,41 @@
+{# Footer Module #}
+<footer class="amp-footer" data-module="footer">
+  <div class="amp-container">
+    <div class="amp-footer__top">
+      {# Logo + badge #}
+      <div class="amp-footer__brand">
+        {% if module.logo.src %}
+          <a href="/" class="amp-footer__logo" aria-label="AmpSociety Home">
+            <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" width="140" height="28">
+          </a>
+        {% endif %}
+        {% if module.badge.src %}
+          <img src="{{ module.badge.src }}" alt="{{ module.badge.alt }}" class="amp-footer__badge" width="100" height="44" loading="lazy">
+        {% endif %}
+      </div>
+
+      {# Link columns #}
+      <div class="amp-footer__columns">
+        {% for column in module.link_columns %}
+          <div class="amp-footer__column">
+            {% if column.title %}
+              <h4 class="amp-footer__column-title">{{ column.title }}</h4>
+            {% endif %}
+            <ul class="amp-footer__links">
+              {% for link_item in column.links %}
+                <li>
+                  <a href="{{ link_item.url.url.href }}" class="amp-footer__link">{{ link_item.label }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {# Bottom bar #}
+    <div class="amp-footer__bottom">
+      <p class="amp-footer__copyright">{{ module.copyright }}</p>
+    </div>
+  </div>
+</footer>

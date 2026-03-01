@@ -1,0 +1,28 @@
+{# News Carousel Module #}
+<section class="amp-news amp-section" data-module="news-carousel">
+  <div class="amp-container">
+    {% if module.section_heading %}
+      <h2 class="amp-news__heading amp-reveal">{{ module.section_heading }}</h2>
+    {% endif %}
+  </div>
+  <div class="amp-news__track" data-news-carousel>
+    {% for card in module.cards %}
+      <article class="amp-news__card amp-reveal amp-reveal-delay-{{ loop.index0 % 4 + 1 }}">
+        {% if card.image.src %}
+          <div class="amp-news__card-image">
+            <img src="{{ card.image.src }}" alt="{{ card.image.alt }}" loading="lazy">
+          </div>
+        {% endif %}
+        <div class="amp-news__card-body">
+          <h3 class="amp-news__card-title">{{ card.title }}</h3>
+          {% if card.description %}
+            <p class="amp-news__card-desc">{{ card.description }}</p>
+          {% endif %}
+          {% if card.link.url.href %}
+            <a href="{{ card.link.url.href }}" class="amp-cta amp-news__card-link">L&auml;s mer</a>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,92 @@
+{# Header / Navigation Module #}
+<header class="amp-header" data-module="header">
+  <div class="amp-header__inner amp-container">
+    {# Logo #}
+    <a href="/" class="amp-header__logo" aria-label="AmpSociety Home">
+      {% if module.logo_light.src %}
+        <img src="{{ module.logo_light.src }}" alt="{{ module.logo_light.alt }}" class="amp-header__logo-light" width="160" height="32">
+      {% endif %}
+      {% if module.logo_dark.src %}
+        <img src="{{ module.logo_dark.src }}" alt="{{ module.logo_dark.alt }}" class="amp-header__logo-dark" width="160" height="32">
+      {% endif %}
+    </a>
+
+    {# Desktop Navigation #}
+    <nav class="amp-header__nav" aria-label="Main navigation">
+      <ul class="amp-header__nav-list">
+        {% for item in module.nav_items %}
+          <li class="amp-header__nav-item{% if item.children %} has-dropdown{% endif %}">
+            {% if item.link.url.href and item.link.url.href != '#' %}
+              <a href="{{ item.link.url.href }}" class="amp-header__nav-link">{{ item.label }}</a>
+            {% else %}
+              <button class="amp-header__nav-link amp-header__nav-toggle" aria-expanded="false">
+                {{ item.label }}
+                <svg class="amp-header__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            {% endif %}
+
+            {% if item.children %}
+              <ul class="amp-header__dropdown">
+                {% for child in item.children %}
+                  <li>
+                    <a href="{{ child.link.url.href }}" class="amp-header__dropdown-link">{{ child.label }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    {# Right side: language switcher + CTA #}
+    <div class="amp-header__actions">
+      <div class="amp-header__lang">
+        <a href="{{ module.lang_link_1.url.href }}" class="amp-header__lang-link is-active">{{ module.lang_label_1 }}</a>
+        <span class="amp-header__lang-divider">/</span>
+        <a href="{{ module.lang_link_2.url.href }}" class="amp-header__lang-link">{{ module.lang_label_2 }}</a>
+      </div>
+      <a href="{{ module.cta_link.url.href }}" class="amp-header__cta">{{ module.cta_label }}</a>
+
+      {# Mobile hamburger #}
+      <button class="amp-header__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  {# Mobile overlay #}
+  <div class="amp-header__mobile-overlay" aria-hidden="true">
+    <nav class="amp-header__mobile-nav">
+      <ul class="amp-header__mobile-list">
+        {% for item in module.nav_items %}
+          <li class="amp-header__mobile-item{% if item.children %} has-dropdown{% endif %}">
+            {% if item.children %}
+              <button class="amp-header__mobile-link amp-header__mobile-toggle" aria-expanded="false">
+                {{ item.label }}
+                <svg class="amp-header__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <ul class="amp-header__mobile-dropdown">
+                {% for child in item.children %}
+                  <li><a href="{{ child.link.url.href }}" class="amp-header__mobile-dropdown-link">{{ child.label }}</a></li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a href="{{ item.link.url.href }}" class="amp-header__mobile-link">{{ item.label }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="amp-header__mobile-footer">
+        <a href="{{ module.cta_link.url.href }}" class="amp-header__cta">{{ module.cta_label }}</a>
+        <div class="amp-header__lang" style="margin-top:24px;">
+          <a href="{{ module.lang_link_1.url.href }}" class="amp-header__lang-link is-active">{{ module.lang_label_1 }}</a>
+          <span class="amp-header__lang-divider">/</span>
+          <a href="{{ module.lang_link_2.url.href }}" class="amp-header__lang-link">{{ module.lang_label_2 }}</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

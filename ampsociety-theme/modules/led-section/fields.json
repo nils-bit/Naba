@@ -1,0 +1,23 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "default": "Lys upp din parkering"
+  },
+  {
+    "name": "body",
+    "label": "Body Text",
+    "type": "text",
+    "default": "Amp5 kan f\u00e5s med integrerad LED f\u00f6r en s\u00e4krare parkeringsmilj\u00f6."
+  },
+  {
+    "name": "background_image",
+    "label": "Background Image",
+    "type": "image",
+    "default": {
+      "src": "https://www.ampsociety.com/storage/090A9E7AD08E91D455B30F8BDF7016A66AEF3278B8C637BD46F9BEB1C977C7B7/c319e2faa6a84babb98e68af4b6ea5ff/jpg/media/b039afa499a74377a06bec36b631e698/AmpSociety_boy_2.jpeg?io=yes&optimize=medium&width=1920&height=1117&fit=bounds&format=jpeg",
+      "alt": "Amp5 LED lighting"
+    }
+  }
+]

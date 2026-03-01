@@ -1,0 +1,19 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "default": "Bli f\u00f6rst med att f\u00e5 v\u00e5ra nyheter"
+  },
+  {
+    "name": "body",
+    "label": "Body Text",
+    "type": "text",
+    "default": "Prenumerera p\u00e5 v\u00e5rt nyhetsbrev s\u00e5 lovar vi att du blir f\u00f6rst att f\u00e5 veta."
+  },
+  {
+    "name": "form_id",
+    "label": "HubSpot Form",
+    "type": "form"
+  }
+]

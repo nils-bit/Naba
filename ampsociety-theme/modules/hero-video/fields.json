@@ -1,0 +1,31 @@
+[
+  {
+    "name": "video_url",
+    "label": "Video URL",
+    "type": "url",
+    "default": "https://www.ampsociety.com/storage/2B83AA97A47FEBB2A4D711BD7E0BF68EC398FF3F044B92B321237A236074A49D/cf6315eceebb4907870c1d1a72cdbdcd/mp4/media/63c534c7fbcc4dc7a188565fd7f3f5ff/Amp5%20Mobile.mp4"
+  },
+  {
+    "name": "video_poster",
+    "label": "Video Poster Image (fallback)",
+    "type": "image"
+  },
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "default": "En professionell standard f\u00f6r p\u00e5litliga, skalbara och nyckelfc\u00e4rdiga laddsystem."
+  },
+  {
+    "name": "subheading",
+    "label": "Subheading",
+    "type": "text",
+    "default": "Amp5"
+  },
+  {
+    "name": "show_scroll_indicator",
+    "label": "Show Scroll Indicator",
+    "type": "boolean",
+    "default": true
+  }
+]

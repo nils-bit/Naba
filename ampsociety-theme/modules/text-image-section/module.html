@@ -1,0 +1,23 @@
+{# Text + Image Section Module #}
+<section class="amp-text-image amp-section amp-text-image--{{ module.layout }}" data-module="text-image-section">
+  <div class="amp-container">
+    <div class="amp-text-image__grid">
+      <div class="amp-text-image__text amp-reveal">
+        {% if module.heading %}
+          <h2 class="amp-text-image__heading">{{ module.heading }}</h2>
+        {% endif %}
+        {% if module.body %}
+          <div class="amp-text-image__body">{{ module.body }}</div>
+        {% endif %}
+        {% if module.cta_text and module.cta_link.url.href %}
+          <a href="{{ module.cta_link.url.href }}" class="amp-cta amp-text-image__cta">{{ module.cta_text }}</a>
+        {% endif %}
+      </div>
+      <div class="amp-text-image__image amp-reveal amp-reveal-delay-2">
+        {% if module.image.src %}
+          <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" loading="lazy">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

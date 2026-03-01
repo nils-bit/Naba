@@ -1,0 +1,27 @@
+{# Newsletter Signup Module #}
+<section class="amp-newsletter amp-section" data-module="newsletter-signup">
+  <div class="amp-container">
+    <div class="amp-newsletter__inner amp-reveal">
+      {% if module.heading %}
+        <h2 class="amp-newsletter__heading">{{ module.heading }}</h2>
+      {% endif %}
+      {% if module.body %}
+        <p class="amp-newsletter__body">{{ module.body }}</p>
+      {% endif %}
+      <div class="amp-newsletter__form">
+        {% if module.form_id.form_id %}
+          {% module "newsletter_form"
+            path="@hubspot/form",
+            form={
+              "form_id": "{{ module.form_id.form_id }}",
+              "response_type": "inline",
+              "message": "Tack f\u00f6r din prenumeration!"
+            }
+          %}
+        {% else %}
+          <p class="amp-newsletter__placeholder">Select a HubSpot form in the page editor.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "default": "H\u00e5llbar laddning f\u00f6r generationer fram\u00e5t"
+  },
+  {
+    "name": "body",
+    "label": "Body Text",
+    "type": "richtext",
+    "default": "<p>Amp5 \u00e4r ett modul\u00e4rt och framtidss\u00e4krat laddsystem som eliminerar bristerna i traditionella laddl\u00f6sningar.</p><p>Med holistisk systemarkitektur och centraliserad laddteknik levererar Amp5 marknadens mest p\u00e5litliga laddupplevelse.</p>"
+  },
+  {
+    "name": "cta_text",
+    "label": "CTA Text",
+    "type": "text",
+    "default": "L\u00e4s mer om Amp5"
+  },
+  {
+    "name": "cta_link",
+    "label": "CTA Link",
+    "type": "link",
+    "default": {
+      "url": {
+        "href": "/sv/laddsystem",
+        "type": "EXTERNAL"
+      }
+    }
+  },
+  {
+    "name": "image",
+    "label": "Image",
+    "type": "image",
+    "default": {
+      "src": "",
+      "alt": ""
+    }
+  },
+  {
+    "name": "layout",
+    "label": "Layout",
+    "type": "choice",
+    "choices": [
+      ["text-left", "Text Left / Image Right"],
+      ["text-right", "Text Right / Image Left"]
+    ],
+    "default": "text-left"
+  }
+]

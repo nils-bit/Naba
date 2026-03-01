@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Product Intro Module
+   ========================================================================== */
+
+.amp-product-intro__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  align-items: end;
+}
+
+.amp-product-intro__large img,
+.amp-product-intro__small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.amp-product-intro__large {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.amp-product-intro__small {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  transform: translateY(-40px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+  .amp-product-intro__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .amp-product-intro__small {
+    transform: none;
+  }
+}

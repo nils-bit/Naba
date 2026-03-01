@@ -1,0 +1,32 @@
+{# About + Stats Module #}
+<section class="amp-about amp-section" data-module="about-stats">
+  <div class="amp-container">
+    {# Intro #}
+    <div class="amp-about__intro amp-reveal">
+      {% if module.heading %}
+        <h2 class="amp-about__heading">{{ module.heading }}</h2>
+      {% endif %}
+      {% if module.intro_text %}
+        <div class="amp-about__text">{{ module.intro_text }}</div>
+      {% endif %}
+    </div>
+
+    {# Stat Cards #}
+    <div class="amp-about__stats">
+      {% for stat in module.stats %}
+        <div class="amp-about__card amp-reveal amp-reveal-delay-{{ loop.index }}">
+          {% if stat.image.src %}
+            <div class="amp-about__card-bg">
+              <img src="{{ stat.image.src }}" alt="{{ stat.image.alt }}" loading="lazy">
+              <div class="amp-about__card-overlay"></div>
+            </div>
+          {% endif %}
+          <div class="amp-about__card-content">
+            <span class="amp-about__card-number">{{ stat.number }}</span>
+            <div class="amp-about__card-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

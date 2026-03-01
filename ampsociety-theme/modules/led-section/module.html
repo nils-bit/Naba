@@ -1,0 +1,17 @@
+{# LED Section Module #}
+<section class="amp-led" data-module="led-section">
+  <div class="amp-led__bg">
+    {% if module.background_image.src %}
+      <img src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}" loading="lazy">
+    {% endif %}
+    <div class="amp-led__overlay"></div>
+  </div>
+  <div class="amp-led__content amp-container amp-reveal">
+    {% if module.heading %}
+      <h2 class="amp-led__heading">{{ module.heading }}</h2>
+    {% endif %}
+    {% if module.body %}
+      <p class="amp-led__body">{{ module.body }}</p>
+    {% endif %}
+  </div>
+</section>

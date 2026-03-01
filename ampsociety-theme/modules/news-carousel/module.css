@@ -1,0 +1,110 @@
+/* ==========================================================================
+   News Carousel Module
+   ========================================================================== */
+
+.amp-news__heading {
+  margin-bottom: 48px;
+}
+
+/* ---------- Carousel Track ---------- */
+.amp-news__track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 48px 24px;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.amp-news__track::-webkit-scrollbar {
+  display: none;
+}
+
+.amp-news__track:active {
+  cursor: grabbing;
+}
+
+/* ---------- Card ---------- */
+.amp-news__card {
+  flex: 0 0 350px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.amp-news__card:first-child {
+  margin-left: calc((100vw - var(--container-max-width)) / 2);
+}
+
+@media (max-width: 1440px) {
+  .amp-news__card:first-child {
+    margin-left: 0;
+  }
+}
+
+.amp-news__card:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- Card Image ---------- */
+.amp-news__card-image {
+  aspect-ratio: 8 / 5;
+  overflow: hidden;
+}
+
+.amp-news__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.amp-news__card:hover .amp-news__card-image img {
+  transform: scale(1.03);
+}
+
+/* ---------- Card Body ---------- */
+.amp-news__card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.amp-news__card-title {
+  margin-bottom: 12px;
+}
+
+.amp-news__card-desc {
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.amp-news__card-link {
+  margin-top: auto;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+  .amp-news__track {
+    padding: 0 20px 16px;
+    gap: 16px;
+  }
+
+  .amp-news__card {
+    flex: 0 0 280px;
+  }
+}

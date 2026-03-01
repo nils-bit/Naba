@@ -1,0 +1,172 @@
+/* ==========================================================================
+   USP Slider Module
+   ========================================================================== */
+
+.amp-usp {
+  padding: 0;
+}
+
+.amp-usp__slider {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  max-height: 800px;
+  overflow: hidden;
+}
+
+/* ---------- Track & Slides ---------- */
+.amp-usp__track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.amp-usp__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.amp-usp__slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Background ---------- */
+.amp-usp__slide-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.amp-usp__slide-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.amp-usp__slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.75) 0%,
+    rgba(10, 10, 10, 0.3) 60%,
+    rgba(10, 10, 10, 0.1) 100%
+  );
+}
+
+/* ---------- Content ---------- */
+.amp-usp__slide-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: 600px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.amp-usp__slide-number {
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: var(--font-weight-light);
+  color: rgba(255, 255, 255, 0.15);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.amp-usp__slide-title {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: var(--font-weight-light);
+  margin-bottom: 20px;
+}
+
+.amp-usp__slide-body {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* ---------- Dots ---------- */
+.amp-usp__nav {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  gap: 12px;
+}
+
+.amp-usp__dot {
+  width: 32px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease;
+  padding: 0;
+}
+
+.amp-usp__dot.is-active {
+  background: var(--color-text-primary);
+  width: 48px;
+}
+
+/* ---------- Arrows ---------- */
+.amp-usp__arrows {
+  position: absolute;
+  bottom: 40px;
+  right: 48px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+
+.amp-usp__arrow {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text-primary);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+}
+
+.amp-usp__arrow:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+  .amp-usp__slider {
+    height: 70vh;
+    min-height: 400px;
+  }
+
+  .amp-usp__arrows {
+    right: 20px;
+    bottom: 24px;
+  }
+
+  .amp-usp__nav {
+    bottom: 24px;
+  }
+
+  .amp-usp__slide-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

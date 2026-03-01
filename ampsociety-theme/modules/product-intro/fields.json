@@ -1,0 +1,20 @@
+[
+  {
+    "name": "image_large",
+    "label": "Large Image (left)",
+    "type": "image",
+    "default": {
+      "src": "https://www.ampsociety.com/storage/6C41B4A03A1E493E61ED3841A2B1B592AC483A7AB3433C2ADD69D0C61FE2F434/0b3fe2670fb2495e9215de658533aa19/jpg/media/4b23be00f27a44488eb117ef4c5c2c5a/AmpSociety_inspiration_big_file.jpeg?io=yes&optimize=medium&width=1920&height=1281&fit=bounds&format=jpeg",
+      "alt": "AmpSociety installation"
+    }
+  },
+  {
+    "name": "image_small",
+    "label": "Small Image (right)",
+    "type": "image",
+    "default": {
+      "src": "https://www.ampsociety.com/storage/476A574720AB75131917B536FD3B26ED7FB99F91280EEAAC0691237E4DD4D844/44fba999e0e841c6864dd24c174b1648/jpg/media/6d10d8851c0f499c94865fbe61dbc0a2/AmpSociety_group_4_3.jpeg?io=yes&optimize=medium&width=1000&height=750&fit=crop&format=jpeg",
+      "alt": "AmpSociety product"
+    }
+  }
+]

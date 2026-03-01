@@ -1,0 +1,177 @@
+/* ==========================================================================
+   AmpSociety Theme — Global Styles
+   ========================================================================== */
+
+/* ---------- Reset & Box Model ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  /* Colors */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0b0b0;
+  --color-accent: #ffffff;
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-primary: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --section-padding: 120px 0;
+  --container-max-width: 1440px;
+  --container-padding: 0 48px;
+
+  /* Breakpoints (for reference — used in media queries) */
+  --bp-mobile: 768px;
+  --bp-tablet: 1024px;
+  --bp-desktop: 1440px;
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* ---------- Typography Scale ---------- */
+h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: var(--font-weight-light);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: var(--font-weight-light);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+.label-text {
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Container ---------- */
+.amp-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+/* ---------- Section Spacing ---------- */
+.amp-section {
+  padding: var(--section-padding);
+}
+
+/* ---------- CTA Link ---------- */
+.amp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-text-primary);
+  padding-bottom: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.amp-cta:hover {
+  opacity: 0.7;
+}
+
+.amp-cta::after {
+  content: '\2192';
+  transition: transform 0.3s ease;
+}
+
+.amp-cta:hover::after {
+  transform: translateX(4px);
+}
+
+/* ---------- Scroll Reveal Animations ---------- */
+.amp-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.amp-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.amp-reveal-delay-1 { transition-delay: 0.1s; }
+.amp-reveal-delay-2 { transition-delay: 0.2s; }
+.amp-reveal-delay-3 { transition-delay: 0.3s; }
+.amp-reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1023px) {
+  :root {
+    --container-padding: 0 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --section-padding: 60px 0;
+    --container-padding: 0 20px;
+  }
+}

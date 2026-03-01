@@ -1,0 +1,17 @@
+{# Product Intro Module — Two asymmetric images #}
+<section class="amp-product-intro amp-section" data-module="product-intro">
+  <div class="amp-container">
+    <div class="amp-product-intro__grid">
+      <div class="amp-product-intro__large amp-reveal">
+        {% if module.image_large.src %}
+          <img src="{{ module.image_large.src }}" alt="{{ module.image_large.alt }}" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="amp-product-intro__small amp-reveal amp-reveal-delay-2">
+        {% if module.image_small.src %}
+          <img src="{{ module.image_small.src }}" alt="{{ module.image_small.alt }}" loading="lazy">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

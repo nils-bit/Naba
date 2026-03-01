@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Newsletter Signup Module
+   ========================================================================== */
+
+.amp-newsletter {
+  background: var(--color-bg-secondary);
+}
+
+.amp-newsletter__inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.amp-newsletter__heading {
+  margin-bottom: 16px;
+}
+
+.amp-newsletter__body {
+  color: var(--color-text-secondary);
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+/* Style the embedded HubSpot form */
+.amp-newsletter__form .hs-form {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.amp-newsletter__form .hs-form .hs-input {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-family: var(--font-primary);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.amp-newsletter__form .hs-form .hs-input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.amp-newsletter__form .hs-form .hs-input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.amp-newsletter__form .hs-form .hs-submit .actions .hs-button {
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-primary);
+  background: var(--color-text-primary);
+  color: var(--color-bg-primary);
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.amp-newsletter__form .hs-form .hs-submit .actions .hs-button:hover {
+  opacity: 0.85;
+}
+
+.amp-newsletter__placeholder {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+  .amp-newsletter__form .hs-form {
+    flex-direction: column;
+  }
+}

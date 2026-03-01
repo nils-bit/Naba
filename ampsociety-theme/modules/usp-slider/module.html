@@ -1,0 +1,46 @@
+{# USP Slider Module #}
+<section class="amp-usp amp-section" data-module="usp-slider">
+  <div class="amp-usp__slider" data-usp-slider>
+    <div class="amp-usp__track">
+      {% for slide in module.slides %}
+        <div class="amp-usp__slide{% if loop.first %} is-active{% endif %}" data-slide-index="{{ loop.index0 }}">
+          {# Background image #}
+          {% if slide.background_image.src %}
+            <div class="amp-usp__slide-bg">
+              <img src="{{ slide.background_image.src }}" alt="{{ slide.background_image.alt }}" loading="lazy">
+              <div class="amp-usp__slide-overlay"></div>
+            </div>
+          {% endif %}
+
+          {# Content #}
+          <div class="amp-usp__slide-content amp-container">
+            <span class="amp-usp__slide-number">#{{ slide.number }}</span>
+            <h2 class="amp-usp__slide-title">{{ slide.title }}</h2>
+            <p class="amp-usp__slide-body">{{ slide.body }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {# Navigation dots #}
+    <div class="amp-usp__nav amp-container">
+      {% for slide in module.slides %}
+        <button
+          class="amp-usp__dot{% if loop.first %} is-active{% endif %}"
+          data-slide-target="{{ loop.index0 }}"
+          aria-label="Go to slide {{ loop.index }}"
+        ></button>
+      {% endfor %}
+    </div>
+
+    {# Arrow navigation #}
+    <div class="amp-usp__arrows">
+      <button class="amp-usp__arrow amp-usp__arrow--prev" aria-label="Previous slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="amp-usp__arrow amp-usp__arrow--next" aria-label="Next slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>

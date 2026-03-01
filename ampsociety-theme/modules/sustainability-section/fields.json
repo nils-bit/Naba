@@ -1,0 +1,9 @@
+[
+  {
+    "name": "note",
+    "label": "Note",
+    "type": "text",
+    "default": "This module reuses text-image-section. Use text-image-section directly in the template.",
+    "locked": true
+  }
+]

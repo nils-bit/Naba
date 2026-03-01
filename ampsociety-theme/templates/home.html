@@ -1,0 +1,200 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: AmpSociety - Home
+  screenshotPath: ../images/template-previews/home.png
+-->
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  <title>{{ page_meta.html_title }}</title>
+
+  {{ standard_header_includes }}
+
+  {# Google Fonts: Inter #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  {# Global Styles #}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+</head>
+<body>
+
+  {# ================================================================
+     1. HEADER / NAVIGATION
+     ================================================================ #}
+  {% module "header"
+    path="./modules/header",
+    label="Header Navigation",
+    logo_dark={
+      "src": "https://www.ampsociety.com/storage/F87EA10171D5DACEA26F38353357872117AE4D3E412A85E5D5C0BBE926349E59/f24bd29b90a346ed8903999b1b5faf41/svg/media/27b73b75e7464d88ada756d5e4a4e9c4/logo-dark.svg",
+      "alt": "AmpSociety"
+    },
+    logo_light={
+      "src": "https://www.ampsociety.com/storage/3428AFF37FCBE3A510BDC37C0D044C403C4E9F255283D0425624453E16DBB7B1/0d3699fbf826492b82ff7f6718178a83/svg/media/a4ec4baa46d34377ab7814d9b3e54924/logo-light.svg",
+      "alt": "AmpSociety"
+    }
+  %}
+
+  <main>
+
+    {# ================================================================
+       2. HERO SECTION (Full-viewport video)
+       ================================================================ #}
+    {% module "hero_video"
+      path="./modules/hero-video",
+      label="Hero Video Section",
+      video_url="https://www.ampsociety.com/storage/2B83AA97A47FEBB2A4D711BD7E0BF68EC398FF3F044B92B321237A236074A49D/cf6315eceebb4907870c1d1a72cdbdcd/mp4/media/63c534c7fbcc4dc7a188565fd7f3f5ff/Amp5%20Mobile.mp4",
+      heading="En professionell standard f\u00f6r p\u00e5litliga, skalbara och nyckelfc\u00e4rdiga laddsystem.",
+      subheading="Amp5",
+      show_scroll_indicator=true
+    %}
+
+    {# ================================================================
+       3. PRODUCT INTRO SECTION
+       ================================================================ #}
+    {% module "product_intro"
+      path="./modules/product-intro",
+      label="Product Intro Images",
+      image_large={
+        "src": "https://www.ampsociety.com/storage/6C41B4A03A1E493E61ED3841A2B1B592AC483A7AB3433C2ADD69D0C61FE2F434/0b3fe2670fb2495e9215de658533aa19/jpg/media/4b23be00f27a44488eb117ef4c5c2c5a/AmpSociety_inspiration_big_file.jpeg?io=yes&optimize=medium&width=1920&height=1281&fit=bounds&format=jpeg",
+        "alt": "AmpSociety installation"
+      },
+      image_small={
+        "src": "https://www.ampsociety.com/storage/476A574720AB75131917B536FD3B26ED7FB99F91280EEAAC0691237E4DD4D844/44fba999e0e841c6864dd24c174b1648/jpg/media/6d10d8851c0f499c94865fbe61dbc0a2/AmpSociety_group_4_3.jpeg?io=yes&optimize=medium&width=1000&height=750&fit=crop&format=jpeg",
+        "alt": "AmpSociety product"
+      }
+    %}
+
+    {# ================================================================
+       4. TEXT + IMAGE: "H\u00e5llbar laddning"
+       ================================================================ #}
+    {% module "text_image_1"
+      path="./modules/text-image-section",
+      label="H\u00e5llbar laddning",
+      heading="H\u00e5llbar laddning f\u00f6r generationer fram\u00e5t",
+      body="<p>Amp5 \u00e4r ett modul\u00e4rt och framtidss\u00e4krat laddsystem som eliminerar bristerna i traditionella laddl\u00f6sningar.</p><p>Med holistisk systemarkitektur och centraliserad laddteknik levererar Amp5 marknadens mest p\u00e5litliga laddupplevelse.</p>",
+      cta_text="L\u00e4s mer om Amp5",
+      cta_link={ "url": { "href": "/sv/laddsystem", "type": "EXTERNAL" } },
+      layout="text-left"
+    %}
+
+    {# ================================================================
+       5. TEXT + IMAGE: "Total frihet med ren OCPP"
+       ================================================================ #}
+    {% module "text_image_2"
+      path="./modules/text-image-section",
+      label="Total frihet med ren OCPP",
+      heading="Total frihet med ren OCPP",
+      body="<p>Amp5 kommunicerar direkt med centrala laddtj\u00e4nster utan proxy vilket g\u00f6r att ni slipper inl\u00e5sning och enkelt kan byta laddtj\u00e4nst i framtiden.</p>",
+      cta_text="L\u00e4s mer om Amp5",
+      cta_link={ "url": { "href": "/sv/laddsystem", "type": "EXTERNAL" } },
+      image={
+        "src": "https://www.ampsociety.com/storage/AAD4717E4EEB2D085B364C454F62654240C8641327BAC4D917D15E5386C07F38/0cadf6e8115449b79c680a4d23e4f538/jpg/media/9cd53f01b49548c0a9429f571d596769/AmpSociety_G5_SmartModule_Front_Price_1920px.jpg",
+        "alt": "Amp5 SmartModule"
+      },
+      layout="text-left"
+    %}
+
+    {# ================================================================
+       6. NEWS CAROUSEL
+       ================================================================ #}
+    {% module "news_carousel"
+      path="./modules/news-carousel",
+      label="News Carousel"
+    %}
+
+    {# ================================================================
+       7. USP SLIDER
+       ================================================================ #}
+    {% module "usp_slider"
+      path="./modules/usp-slider",
+      label="USP Slider"
+    %}
+
+    {# ================================================================
+       8. SUSTAINABILITY: "Robust. H\u00e5llbart. Milj\u00f6v\u00e4nligt."
+       ================================================================ #}
+    {% module "text_image_sustainability"
+      path="./modules/text-image-section",
+      label="Robust. H\u00e5llbart. Milj\u00f6v\u00e4nligt.",
+      heading="Robust. H\u00e5llbart. Milj\u00f6v\u00e4nligt.",
+      body="<p>Amp5 tillverkas av Hydro Circal, h\u00f6gkvalitativt \u00e5tervunnet aluminium med l\u00e5g koldioxidhalt. Med 5 \u00e5rs produktgaranti och minst 20 \u00e5rs ber\u00e4knad livsl\u00e4ngd s\u00e5 kan vi garantera h\u00e5llbara ekonomiska f\u00f6rdelar.</p>",
+      cta_text="Mer om kvalitet & h\u00e5llbarhet",
+      cta_link={ "url": { "href": "/sv/society/kvalitet-och-hallbarhet", "type": "EXTERNAL" } },
+      image={
+        "src": "https://www.ampsociety.com/storage/F0DE6FC47B068270A24BAA020DE9B246B24CA2F74D87EC8D505A37BAEA457DD3/42e2d44de5b042868d6754256039dbe7/jpg/media/08879dc0211e4a0e901618c8ac709b7b/AmpSociety_G5_System2.jpg",
+        "alt": "Amp5 system"
+      },
+      layout="text-left"
+    %}
+
+    {# ================================================================
+       9. INSTALLATION: "Enkel installation. Maximal p\u00e5litlighet."
+       ================================================================ #}
+    {% module "text_image_installation"
+      path="./modules/text-image-section",
+      label="Enkel installation",
+      heading="Enkel installation. Maximal p\u00e5litlighet.",
+      body="<p>Amp5 \u00e4r ett komplett och modul\u00e4rt system med en enkel och kvalitetss\u00e4krad montering som g\u00f6r att du alltid f\u00e5r en korrekt utf\u00f6rd och driftss\u00e4ker installation.</p><p>Ni slipper kabeldragning, markarbeten och att f\u00e5 olika h\u00e5rdvaror att fungera ihop.</p>",
+      cta_text="L\u00e4s mer om v\u00e5r enkla installation",
+      cta_link={ "url": { "href": "/sv/installation", "type": "EXTERNAL" } },
+      layout="text-left"
+    %}
+
+    {# ================================================================
+       10. LED SECTION
+       ================================================================ #}
+    {% module "led_section"
+      path="./modules/led-section",
+      label="LED Section",
+      heading="Lys upp din parkering",
+      body="Amp5 kan f\u00e5s med integrerad LED f\u00f6r en s\u00e4krare parkeringsmilj\u00f6.",
+      background_image={
+        "src": "https://www.ampsociety.com/storage/090A9E7AD08E91D455B30F8BDF7016A66AEF3278B8C637BD46F9BEB1C977C7B7/c319e2faa6a84babb98e68af4b6ea5ff/jpg/media/b039afa499a74377a06bec36b631e698/AmpSociety_boy_2.jpeg?io=yes&optimize=medium&width=1920&height=1117&fit=bounds&format=jpeg",
+        "alt": "Amp5 LED lighting"
+      }
+    %}
+
+    {# ================================================================
+       11. NEWSLETTER SIGNUP
+       ================================================================ #}
+    {% module "newsletter_signup"
+      path="./modules/newsletter-signup",
+      label="Newsletter Signup",
+      heading="Bli f\u00f6rst med att f\u00e5 v\u00e5ra nyheter",
+      body="Prenumerera p\u00e5 v\u00e5rt nyhetsbrev s\u00e5 lovar vi att du blir f\u00f6rst att f\u00e5 veta."
+    %}
+
+    {# ================================================================
+       12. ABOUT + STATS
+       ================================================================ #}
+    {% module "about_stats"
+      path="./modules/about-stats",
+      label="About & Stats Section",
+      heading="Vi \u00e4r AmpSociety",
+      intro_text="<p>Med r\u00f6tterna i ChargeNode, Sveriges st\u00f6rsta ladd\u00f6perat\u00f6r med \u00f6ver 40,000 laddpunkter, s\u00e5 vet vi vad som kr\u00e4vs f\u00f6r att bygga och drifta p\u00e5litliga och storskaliga laddsystem.</p>"
+    %}
+
+  </main>
+
+  {# ================================================================
+     13. FOOTER
+     ================================================================ #}
+  {% module "footer"
+    path="./modules/footer",
+    label="Footer"
+  %}
+
+  {# Global Scripts #}
+  {{ require_js(get_asset_url("../js/main.js")) }}
+
+  {{ standard_footer_includes }}
+
+</body>
+</html>
