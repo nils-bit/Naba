@@ -1,0 +1,66 @@
+<header class="naba-header" data-module="header">
+  <div class="naba-header__inner naba-container">
+
+    {# Logo #}
+    <a href="/" class="naba-header__logo" aria-label="NABA Home">
+      {% if module.logo.src %}
+        <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" loading="eager" width="220" height="40">
+      {% else %}
+        <span class="naba-header__logo-text">
+          <strong>naba</strong> <span class="naba-header__logo-divider">|</span>
+          <span class="naba-header__logo-sub">Norwegian-African<br>Business Association</span>
+        </span>
+      {% endif %}
+    </a>
+
+    {# Desktop Navigation #}
+    <nav class="naba-header__nav" aria-label="Main navigation">
+      <ul class="naba-header__nav-list">
+        {% for item in module.nav_items %}
+          <li class="naba-header__nav-item">
+            <a href="{{ item.link.url.href }}"
+               class="naba-header__nav-link"
+               {% if item.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+              {{ item.item_label }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    {# CTA Button #}
+    {% if module.cta_label %}
+      <div class="naba-header__actions">
+        <a href="{{ module.cta_link.url.href }}"
+           class="naba-header__cta"
+           {% if module.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ module.cta_label }}
+        </a>
+      </div>
+    {% endif %}
+
+    {# Mobile Hamburger #}
+    <button class="naba-header__hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  {# Mobile Overlay #}
+  <div class="naba-header__mobile-overlay">
+    <nav class="naba-header__mobile-nav">
+      {% for item in module.nav_items %}
+        <a href="{{ item.link.url.href }}" class="naba-header__mobile-link">
+          {{ item.label }}
+        </a>
+      {% endfor %}
+      {% if module.cta_label %}
+        <a href="{{ module.cta_link.url.href }}" class="naba-btn naba-btn--outline naba-header__mobile-cta">
+          {{ module.cta_label }}
+        </a>
+      {% endif %}
+    </nav>
+  </div>
+</header>

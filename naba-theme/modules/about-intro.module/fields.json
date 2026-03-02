@@ -1,0 +1,50 @@
+[
+  {
+    "type": "text",
+    "name": "section_label",
+    "label": "Section Label",
+    "default": "WHO WE ARE"
+  },
+  {
+    "type": "richtext",
+    "name": "heading",
+    "label": "Heading (use <u> for underline accent)",
+    "default": "<u>The Community</u> for Norwegian-African partnerships in Africa"
+  },
+  {
+    "type": "richtext",
+    "name": "body_text",
+    "label": "Body Text",
+    "default": "<p>The Norwegian-African Business Association (NABA) drives Nordic\u2013African business by helping companies identify real opportunities, build strong partnerships and invest in one of the world\u2019s most dynamic and fast-growing markets.</p>"
+  },
+  {
+    "type": "text",
+    "name": "cta_primary_label",
+    "label": "Primary CTA Label",
+    "default": "What We Do \u2192"
+  },
+  {
+    "type": "link",
+    "name": "cta_primary_link",
+    "label": "Primary CTA Link",
+    "default": {
+      "url": { "href": "/about", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "text",
+    "name": "cta_secondary_label",
+    "label": "Secondary CTA Label",
+    "default": "The NABA Team \u2192"
+  },
+  {
+    "type": "link",
+    "name": "cta_secondary_link",
+    "label": "Secondary CTA Link",
+    "default": {
+      "url": { "href": "/team", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  }
+]

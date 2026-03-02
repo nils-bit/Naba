@@ -1,0 +1,106 @@
+[
+  {
+    "type": "text",
+    "name": "section_label",
+    "label": "Section Label",
+    "default": "LATEST"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Heading",
+    "default": "News & Insights"
+  },
+  {
+    "type": "text",
+    "name": "cta_label",
+    "label": "View All Button Label",
+    "default": "All News \u2192"
+  },
+  {
+    "type": "link",
+    "name": "cta_link",
+    "label": "View All Link",
+    "default": {
+      "url": { "href": "/news", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "group",
+    "name": "articles",
+    "label": "Articles",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 3
+    },
+    "children": [
+      {
+        "type": "image",
+        "name": "image",
+        "label": "Featured Image",
+        "default": {
+          "src": "",
+          "alt": "Article image"
+        }
+      },
+      {
+        "type": "text",
+        "name": "category",
+        "label": "Category",
+        "default": "News"
+      },
+      {
+        "type": "text",
+        "name": "date",
+        "label": "Date",
+        "default": "Jan 30, 2026"
+      },
+      {
+        "type": "text",
+        "name": "title",
+        "label": "Title",
+        "default": "Article Title"
+      },
+      {
+        "type": "text",
+        "name": "excerpt",
+        "label": "Excerpt",
+        "default": "Short description of the article."
+      },
+      {
+        "type": "link",
+        "name": "link",
+        "label": "Article Link",
+        "default": {
+          "url": { "href": "#", "type": "EXTERNAL" },
+          "open_in_new_tab": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "image": { "src": "", "alt": "NABA Team" },
+        "category": "News", "date": "Jan 30, 2026",
+        "title": "The NABA Team is expanding!",
+        "excerpt": "The NABA Team is expanding!",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "image": { "src": "", "alt": "Malthe Winje" },
+        "category": "Member Success", "date": "Dec 18, 2025",
+        "title": "Malthe Winje Infrapower Signs PPA for Waga Hydropower Project in Burundi",
+        "excerpt": "Malthe Winje Infrapower (MWIP) and KAGE Ltd have entered into a Power Purchase Agreement (PPA) for the 2 MW Waga project in Burundi.",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "image": { "src": "", "alt": "Turkish Airlines" },
+        "category": "News", "date": "Dec 2, 2025",
+        "title": "NABA enters into agreement with Turkish Airlines",
+        "excerpt": "NABA is proud to announce our new cooperation with Turkish Airlines and the exclusive travel benefits available to our member companies.",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      }
+    ]
+  }
+]

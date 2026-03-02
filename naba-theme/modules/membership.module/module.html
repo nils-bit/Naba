@@ -1,0 +1,51 @@
+<section class="naba-membership naba-section" data-module="membership">
+  <div class="naba-container">
+    <div class="naba-membership__grid">
+
+      {# Left: Text Content #}
+      <div class="naba-membership__text naba-reveal">
+        {% if module.section_label %}
+          <span class="naba-label naba-label--dark">{{ module.section_label }}</span>
+        {% endif %}
+
+        {% if module.heading %}
+          <h2 class="naba-membership__heading">{{ module.heading }}</h2>
+        {% endif %}
+
+        {% if module.body_text %}
+          <div class="naba-membership__body">{{ module.body_text }}</div>
+        {% endif %}
+
+        <div class="naba-membership__actions">
+          {% if module.cta_primary_label %}
+            <a href="{{ module.cta_primary_link.url.href }}"
+               class="naba-btn naba-btn--navy"
+               {% if module.cta_primary_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+              {{ module.cta_primary_label }}
+            </a>
+          {% endif %}
+          {% if module.cta_secondary_label %}
+            <a href="{{ module.cta_secondary_link.url.href }}"
+               class="naba-btn naba-btn--outline-dark"
+               {% if module.cta_secondary_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+              {{ module.cta_secondary_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      {# Right: Benefits Checklist #}
+      <div class="naba-membership__benefits naba-reveal naba-reveal-delay-2">
+        {% for benefit in module.benefits %}
+          <div class="naba-membership__benefit">
+            <svg class="naba-membership__check" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M20 6L9 17L4 12" stroke="var(--naba-cyan)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="naba-membership__benefit-text">{{ benefit.text }}</span>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>

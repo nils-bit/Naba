@@ -1,0 +1,112 @@
+[
+  {
+    "type": "text",
+    "name": "section_label",
+    "label": "Section Label",
+    "default": "CALENDAR"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Heading",
+    "default": "Upcoming Events"
+  },
+  {
+    "type": "text",
+    "name": "past_events_label",
+    "label": "Past Events Button Label",
+    "default": "Past events \u2192"
+  },
+  {
+    "type": "link",
+    "name": "past_events_link",
+    "label": "Past Events Link",
+    "default": {
+      "url": { "href": "/past-events", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "group",
+    "name": "events",
+    "label": "Events",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 5
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "month",
+        "label": "Month (short)",
+        "default": "MAR"
+      },
+      {
+        "type": "text",
+        "name": "day",
+        "label": "Day Number",
+        "default": "9"
+      },
+      {
+        "type": "text",
+        "name": "date_range",
+        "label": "Date Range Text",
+        "default": "Mar 9, 2026 \u2013 Mar 11, 2026"
+      },
+      {
+        "type": "text",
+        "name": "location",
+        "label": "Location",
+        "default": "Kigali"
+      },
+      {
+        "type": "text",
+        "name": "title",
+        "label": "Event Title",
+        "default": "Rwanda Nordic-Baltic Forum 2025"
+      },
+      {
+        "type": "link",
+        "name": "link",
+        "label": "Event Link",
+        "default": {
+          "url": { "href": "#", "type": "EXTERNAL" },
+          "open_in_new_tab": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "month": "MAR", "day": "9",
+        "date_range": "Mar 9, 2026 \u2013 Mar 11, 2026", "location": "Kigali",
+        "title": "Rwanda Nordic-Baltic Forum 2025",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "month": "MAR", "day": "17",
+        "date_range": "Mar 17, 2026 \u2013 Mar 18, 2026", "location": "Brussels",
+        "title": "RENMOZ in Europe 2026",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "month": "APR", "day": "13",
+        "date_range": "Apr 13, 2026 \u2013 Apr 19, 2026", "location": "Abidjan",
+        "title": "Business Mission to Ivory Coast",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "month": "MAY", "day": "18",
+        "date_range": "May 18, 2026 \u2013 May 21, 2026", "location": "Exhibition Center - Safex",
+        "title": "SIPSA Afrika Food Export 2026",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "month": "JUN", "day": "1",
+        "date_range": "Jun 1, 2026 \u2013 Jun 4, 2026", "location": "Lagos",
+        "title": "Business Mission to Lagos, Nigeria",
+        "link": { "url": { "href": "#", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      }
+    ]
+  }
+]

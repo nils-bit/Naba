@@ -1,0 +1,14 @@
+{
+  "name": "naba-theme",
+  "label": "NABA Theme",
+  "author_name": "Purasu",
+  "author_url": "https://purasu.com",
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "(max-width: 767px)",
+      "previewWidth": { "value": 375, "units": "px" }
+    }
+  ],
+  "preview_path": "/"
+}

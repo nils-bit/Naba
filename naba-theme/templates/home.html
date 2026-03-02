@@ -1,0 +1,99 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: NABA - Home
+  screenshotPath: ../images/template-previews/home.png
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ standard_header_includes }}
+
+  {# Google Fonts #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  {# Global CSS #}
+  {{ require_css(get_asset_url('../css/main.css')) }}
+</head>
+<body>
+
+  {# ========== HEADER ========== #}
+  {% module "header"
+    path="../modules/header.module",
+    label="Header",
+    logo={
+      "src": "",
+      "alt": "NABA - Norwegian-African Business Association"
+    },
+    nav_items=[
+      { "label": "About us", "link": { "url": { "href": "/about", "type": "EXTERNAL" }, "open_in_new_tab": false } },
+      { "label": "Events", "link": { "url": { "href": "/events", "type": "EXTERNAL" }, "open_in_new_tab": false } },
+      { "label": "Membership", "link": { "url": { "href": "/membership", "type": "EXTERNAL" }, "open_in_new_tab": false } }
+    ],
+    cta_label="Contact",
+    cta_link={ "url": { "href": "/contact", "type": "EXTERNAL" }, "open_in_new_tab": false }
+  %}
+
+  <main>
+
+    {# ========== HERO ========== #}
+    {% module "hero"
+      path="../modules/hero.module",
+      label="Hero Section"
+    %}
+
+    {# ========== ABOUT / WHO WE ARE ========== #}
+    {% module "about_intro"
+      path="../modules/about-intro.module",
+      label="About Intro"
+    %}
+
+    {# ========== ANNUAL SUMMIT ========== #}
+    {% module "annual_summit"
+      path="../modules/annual-summit.module",
+      label="Annual Summit"
+    %}
+
+    {# ========== UPCOMING EVENTS ========== #}
+    {% module "upcoming_events"
+      path="../modules/upcoming-events.module",
+      label="Upcoming Events"
+    %}
+
+    {# ========== MEMBERSHIP ========== #}
+    {% module "membership"
+      path="../modules/membership.module",
+      label="Membership"
+    %}
+
+    {# ========== NEWS & INSIGHTS ========== #}
+    {% module "news_grid"
+      path="../modules/news-grid.module",
+      label="News & Insights"
+    %}
+
+    {# ========== NEWSLETTER BANNER ========== #}
+    {% module "newsletter_banner"
+      path="../modules/newsletter-banner.module",
+      label="Newsletter Banner"
+    %}
+
+  </main>
+
+  {# ========== FOOTER ========== #}
+  {% module "footer"
+    path="../modules/footer.module",
+    label="Footer"
+  %}
+
+  {# Global JS #}
+  {{ require_js(get_asset_url('../js/main.js'), 'footer') }}
+
+  {{ standard_footer_includes }}
+</body>
+</html>

@@ -1,0 +1,75 @@
+[
+  {
+    "type": "text",
+    "name": "section_label",
+    "label": "Section Label",
+    "default": "MEMBERSHIP"
+  },
+  {
+    "type": "richtext",
+    "name": "heading",
+    "label": "Heading (use <u> for underline accent)",
+    "default": "Your Gateway to <u>African Markets</u>"
+  },
+  {
+    "type": "richtext",
+    "name": "body_text",
+    "label": "Body Text",
+    "default": "<p>Our mission is to be a true partner to our members, adding value through a broad range of services, all aimed at helping you to realize the exciting opportunities that doing business in Africa has to offer.</p>"
+  },
+  {
+    "type": "group",
+    "name": "benefits",
+    "label": "Benefits List",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 5
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "text",
+        "label": "Benefit Text",
+        "default": "Benefit description"
+      }
+    ],
+    "default": [
+      { "text": "Invitations to strategic roundtables and forums" },
+      { "text": "Networking with leading Nordic & African decision-makers" },
+      { "text": "Access to exclusive business missions across Africa" },
+      { "text": "Market intelligence and member-only insights" },
+      { "text": "Visibility through NABA's platforms and events" }
+    ]
+  },
+  {
+    "type": "text",
+    "name": "cta_primary_label",
+    "label": "Primary CTA Label",
+    "default": "Member Benefits \u2192"
+  },
+  {
+    "type": "link",
+    "name": "cta_primary_link",
+    "label": "Primary CTA Link",
+    "default": {
+      "url": { "href": "/membership", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "text",
+    "name": "cta_secondary_label",
+    "label": "Secondary CTA Label",
+    "default": "Our Members"
+  },
+  {
+    "type": "link",
+    "name": "cta_secondary_link",
+    "label": "Secondary CTA Link",
+    "default": {
+      "url": { "href": "/members", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  }
+]

@@ -1,0 +1,47 @@
+<section class="naba-hero" data-module="hero">
+  {# Background Image #}
+  <div class="naba-hero__bg">
+    {% if module.background_image.src %}
+      <img src="{{ module.background_image.src }}"
+           alt="{{ module.background_image.alt }}"
+           class="naba-hero__bg-img"
+           loading="eager">
+    {% endif %}
+    <div class="naba-hero__overlay"></div>
+  </div>
+
+  {# Content #}
+  <div class="naba-hero__content naba-container">
+    {% if module.top_label %}
+      <span class="naba-label naba-reveal">{{ module.top_label }}</span>
+    {% endif %}
+
+    {% if module.heading %}
+      <h1 class="naba-hero__heading naba-reveal naba-reveal-delay-1">{{ module.heading }}</h1>
+    {% endif %}
+
+    {% if module.description %}
+      <div class="naba-hero__desc naba-reveal naba-reveal-delay-2">
+        {{ module.description }}
+      </div>
+    {% endif %}
+
+    <div class="naba-hero__actions naba-reveal naba-reveal-delay-3">
+      {% if module.cta_primary_label %}
+        <a href="{{ module.cta_primary_link.url.href }}"
+           class="naba-btn naba-btn--primary"
+           {% if module.cta_primary_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ module.cta_primary_label }}
+        </a>
+      {% endif %}
+
+      {% if module.cta_secondary_label %}
+        <a href="{{ module.cta_secondary_link.url.href }}"
+           class="naba-btn naba-btn--outline"
+           {% if module.cta_secondary_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ module.cta_secondary_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>

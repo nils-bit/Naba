@@ -1,0 +1,65 @@
+<section class="naba-news naba-section" data-module="news-grid">
+  <div class="naba-container">
+
+    {# Header Row #}
+    <div class="naba-news__header naba-reveal">
+      <div>
+        {% if module.section_label %}
+          <span class="naba-label">{{ module.section_label }}</span>
+        {% endif %}
+        {% if module.heading %}
+          <h2 class="naba-news__heading">{{ module.heading }}</h2>
+        {% endif %}
+      </div>
+      {% if module.cta_label %}
+        <a href="{{ module.cta_link.url.href }}"
+           class="naba-btn naba-btn--outline-dark naba-btn--sm"
+           {% if module.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ module.cta_label }}
+        </a>
+      {% endif %}
+    </div>
+
+    {# Card Grid #}
+    <div class="naba-news__grid">
+      {% for article in module.articles %}
+        <a href="{{ article.link.url.href }}"
+           class="naba-news__card naba-reveal naba-reveal-delay-{{ loop.index0 % 3 + 1 }}"
+           {% if article.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+
+          {# Image #}
+          <div class="naba-news__card-image">
+            {% if article.image.src %}
+              <img src="{{ article.image.src }}" alt="{{ article.image.alt }}" loading="lazy">
+            {% else %}
+              <div class="naba-news__card-placeholder">
+                <span>{{ article.title|truncate(30) }}</span>
+              </div>
+            {% endif %}
+          </div>
+
+          {# Content #}
+          <div class="naba-news__card-body">
+            <div class="naba-news__card-meta">
+              {% if article.category %}
+                <span class="naba-news__card-cat">{{ article.category }}</span>
+              {% endif %}
+              {% if article.category and article.date %}
+                <span class="naba-news__card-sep">&middot;</span>
+              {% endif %}
+              {% if article.date %}
+                <span class="naba-news__card-date">{{ article.date }}</span>
+              {% endif %}
+            </div>
+            <h3 class="naba-news__card-title">{{ article.title }}</h3>
+            {% if article.excerpt %}
+              <p class="naba-news__card-excerpt">{{ article.excerpt }}</p>
+            {% endif %}
+          </div>
+
+        </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
