@@ -47,18 +47,18 @@
       {
         "title": "ABOUT US",
         "links": [
-          { "item_label": "What We Do", "url": { "url": { "href": "/about", "type": "EXTERNAL" }, "open_in_new_tab": false } },
-          { "item_label": "The Team", "url": { "url": { "href": "/team", "type": "EXTERNAL" }, "open_in_new_tab": false } },
-          { "item_label": "News", "url": { "url": { "href": "/news", "type": "EXTERNAL" }, "open_in_new_tab": false } },
+          { "item_label": "What We Do", "url": { "url": { "href": "/about-us", "type": "EXTERNAL" }, "open_in_new_tab": false } },
+          { "item_label": "The Team", "url": { "url": { "href": "/naba-team", "type": "EXTERNAL" }, "open_in_new_tab": false } },
+          { "item_label": "News", "url": { "url": { "href": "/recent-news", "type": "EXTERNAL" }, "open_in_new_tab": false } },
           { "item_label": "Vacancies", "url": { "url": { "href": "/vacancies", "type": "EXTERNAL" }, "open_in_new_tab": false } }
         ]
       },
       {
         "title": "EVENTS",
         "links": [
-          { "item_label": "Annual Summit", "url": { "url": { "href": "/summit", "type": "EXTERNAL" }, "open_in_new_tab": false } },
-          { "item_label": "Upcoming Events", "url": { "url": { "href": "/events", "type": "EXTERNAL" }, "open_in_new_tab": false } },
-          { "item_label": "Past Events", "url": { "url": { "href": "/past-events", "type": "EXTERNAL" }, "open_in_new_tab": false } },
+          { "item_label": "Annual Summit", "url": { "url": { "href": "https://summit.norwegianafrican.no/", "type": "EXTERNAL" }, "open_in_new_tab": false } },
+          { "item_label": "Upcoming Events", "url": { "url": { "href": "/upcoming-events", "type": "EXTERNAL" }, "open_in_new_tab": false } },
+          { "item_label": "Past Events", "url": { "url": { "href": "/upcoming-events#past-events", "type": "EXTERNAL" }, "open_in_new_tab": false } },
           { "item_label": "Volunteer Programme", "url": { "url": { "href": "/volunteer", "type": "EXTERNAL" }, "open_in_new_tab": false } }
         ]
       },
@@ -93,7 +93,7 @@
     "type": "text",
     "name": "copyright",
     "label": "Copyright Text",
-    "default": "\u00a9 NABA - Norwegian-African Business Association. VAT no.: 999 012 825"
+    "default": "\u00a9 NABA \u2013 Norwegian-African Business Association. VAT no.: 999 012 825"
   },
   {
     "type": "group",

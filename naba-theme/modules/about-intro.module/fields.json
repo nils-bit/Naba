@@ -9,13 +9,13 @@
     "type": "richtext",
     "name": "heading",
     "label": "Heading (use <u> for underline accent)",
-    "default": "<u>The Community</u> for Norwegian-African partnerships in Africa"
+    "default": "The <u>Community</u> for Norwegian-African partnerships in Africa"
   },
   {
     "type": "richtext",
     "name": "body_text",
     "label": "Body Text",
-    "default": "<p>The Norwegian-African Business Association (NABA) drives Nordic\u2013African business by helping companies identify real opportunities, build strong partnerships and invest in one of the world\u2019s most dynamic and fast-growing markets.</p>"
+    "default": "<p>The Norwegian-African Business Association (NABA) drives Nordic\u2013African business by helping companies identify real opportunities, build strong partnerships and invest in one of the world\u2019s most dynamic and fast\u2011growing markets.</p>"
   },
   {
     "type": "text",
@@ -28,7 +28,7 @@
     "name": "cta_primary_link",
     "label": "Primary CTA Link",
     "default": {
-      "url": { "href": "/about", "type": "EXTERNAL" },
+      "url": { "href": "/about-us", "type": "EXTERNAL" },
       "open_in_new_tab": false
     }
   },
@@ -43,7 +43,7 @@
     "name": "cta_secondary_link",
     "label": "Secondary CTA Link",
     "default": {
-      "url": { "href": "/team", "type": "EXTERNAL" },
+      "url": { "href": "/naba-team", "type": "EXTERNAL" },
       "open_in_new_tab": false
     }
   }

@@ -22,7 +22,7 @@
     "name": "cta_link",
     "label": "CTA Link",
     "default": {
-      "url": { "href": "/newsletter", "type": "EXTERNAL" },
+      "url": { "href": "/#l-weekly-brief-popup", "type": "EXTERNAL" },
       "open_in_new_tab": false
     }
   }

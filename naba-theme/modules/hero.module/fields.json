@@ -4,7 +4,7 @@
     "name": "background_image",
     "label": "Background Image",
     "default": {
-      "src": "",
+      "src": "https://images.squarespace-cdn.com/content/v1/5e6b8563380ccc4e4fd26a4f/00a4d77e-1af3-46bc-9bdd-f7f050c8ef06/NABA+Home+Hero+Fallback+Img.webp?format=2500w",
       "alt": "Hero background"
     }
   },
@@ -12,7 +12,7 @@
     "type": "text",
     "name": "top_label",
     "label": "Top Label",
-    "default": "Norwegian-African Business Association"
+    "default": "NORWEGIAN-AFRICAN BUSINESS ASSOCIATION"
   },
   {
     "type": "text",
@@ -37,7 +37,7 @@
     "name": "cta_primary_link",
     "label": "Primary CTA Link",
     "default": {
-      "url": { "href": "/summit", "type": "EXTERNAL" },
+      "url": { "href": "https://summit.norwegianafrican.no/", "type": "EXTERNAL" },
       "open_in_new_tab": false
     }
   },

@@ -22,7 +22,7 @@
     "name": "cta_link",
     "label": "View All Link",
     "default": {
-      "url": { "href": "/news", "type": "EXTERNAL" },
+      "url": { "href": "/recent-news", "type": "EXTERNAL" },
       "open_in_new_tab": false
     }
   },

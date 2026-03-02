@@ -34,7 +34,7 @@
     "name": "graphic",
     "label": "Summit Graphic / Logo",
     "default": {
-      "src": "",
+      "src": "https://images.squarespace-cdn.com/content/v1/5e6b8563380ccc4e4fd26a4f/f278c679-7b91-4509-ad87-d8e2ed5c062c/NABS26+Main+figure.png",
       "alt": "Summit graphic"
     }
   },
@@ -78,7 +78,7 @@
     "name": "cta_link",
     "label": "CTA Link",
     "default": {
-      "url": { "href": "/summit", "type": "EXTERNAL" },
+      "url": { "href": "https://event.checkin.no/219371/nordic-african-business-summit-2026", "type": "EXTERNAL" },
       "open_in_new_tab": false
     }
   }

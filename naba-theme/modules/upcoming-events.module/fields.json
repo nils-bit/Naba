@@ -22,7 +22,7 @@
     "name": "past_events_link",
     "label": "Past Events Link",
     "default": {
-      "url": { "href": "/past-events", "type": "EXTERNAL" },
+      "url": { "href": "/upcoming-events#past-events", "type": "EXTERNAL" },
       "open_in_new_tab": false
     }
   },

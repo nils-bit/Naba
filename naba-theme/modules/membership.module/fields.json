@@ -9,7 +9,7 @@
     "type": "richtext",
     "name": "heading",
     "label": "Heading (use <u> for underline accent)",
-    "default": "Your Gateway to <u>African Markets</u>"
+    "default": "Your <u>Gateway</u> to African Markets"
   },
   {
     "type": "richtext",
@@ -35,11 +35,11 @@
       }
     ],
     "default": [
-      { "text": "Invitations to strategic roundtables and forums" },
-      { "text": "Networking with leading Nordic & African decision-makers" },
       { "text": "Access to exclusive business missions across Africa" },
+      { "text": "Networking with leading Nordic & African decision-makers" },
+      { "text": "Invitations to strategic roundtables and forums" },
       { "text": "Market intelligence and member-only insights" },
-      { "text": "Visibility through NABA's platforms and events" }
+      { "text": "Visibility through NABA\u2019s platforms and events" }
     ]
   },
   {

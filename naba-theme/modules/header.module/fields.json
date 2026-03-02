@@ -4,7 +4,7 @@
     "name": "logo",
     "label": "Logo",
     "default": {
-      "src": "",
+      "src": "https://images.squarespace-cdn.com/content/v1/5e6b8563380ccc4e4fd26a4f/1585578767216-59XHJXCVH3F8P405ACLK/NABA-Logo-Horisontal-%5BRGB%5D.png?format=1500w",
       "alt": "NABA - Norwegian-African Business Association"
     }
   },
@@ -40,11 +40,11 @@
     "default": [
       {
         "item_label": "About us",
-        "link": { "url": { "href": "/about", "type": "EXTERNAL" }, "open_in_new_tab": false }
+        "link": { "url": { "href": "/about-us", "type": "EXTERNAL" }, "open_in_new_tab": false }
       },
       {
         "item_label": "Events",
-        "link": { "url": { "href": "/events", "type": "EXTERNAL" }, "open_in_new_tab": false }
+        "link": { "url": { "href": "/upcoming-events", "type": "EXTERNAL" }, "open_in_new_tab": false }
       },
       {
         "item_label": "Membership",
