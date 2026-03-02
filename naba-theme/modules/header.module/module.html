@@ -53,7 +53,7 @@
     <nav class="naba-header__mobile-nav">
       {% for item in module.nav_items %}
         <a href="{{ item.link.url.href }}" class="naba-header__mobile-link">
-          {{ item.label }}
+          {{ item.item_label }}
         </a>
       {% endfor %}
       {% if module.cta_label %}

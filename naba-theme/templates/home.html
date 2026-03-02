@@ -2,7 +2,6 @@
   templateType: page
   isAvailableForNewContent: true
   label: NABA - Home
-  screenshotPath: ../images/template-previews/home.png
 -->
 
 <!DOCTYPE html>
@@ -25,63 +24,87 @@
   {# ========== HEADER ========== #}
   {% module "header"
     path="../modules/header.module",
-    label="Header",
-    logo={
-      "src": "",
-      "alt": "NABA - Norwegian-African Business Association"
-    },
-    nav_items=[
-      { "label": "About us", "link": { "url": { "href": "/about", "type": "EXTERNAL" }, "open_in_new_tab": false } },
-      { "label": "Events", "link": { "url": { "href": "/events", "type": "EXTERNAL" }, "open_in_new_tab": false } },
-      { "label": "Membership", "link": { "url": { "href": "/membership", "type": "EXTERNAL" }, "open_in_new_tab": false } }
-    ],
-    cta_label="Contact",
-    cta_link={ "url": { "href": "/contact", "type": "EXTERNAL" }, "open_in_new_tab": false }
+    label="Header"
   %}
 
   <main>
 
-    {# ========== HERO ========== #}
-    {% module "hero"
-      path="../modules/hero.module",
-      label="Hero Section"
+    {# ========== DRAG & DROP CONTENT AREA ========== #}
+    {% dnd_area "main_content"
+      label="Main Content"
     %}
 
-    {# ========== ABOUT / WHO WE ARE ========== #}
-    {% module "about_intro"
-      path="../modules/about-intro.module",
-      label="About Intro"
-    %}
+      {# ---- HERO ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/hero.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
 
-    {# ========== ANNUAL SUMMIT ========== #}
-    {% module "annual_summit"
-      path="../modules/annual-summit.module",
-      label="Annual Summit"
-    %}
+      {# ---- ABOUT / WHO WE ARE ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/about-intro.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
 
-    {# ========== UPCOMING EVENTS ========== #}
-    {% module "upcoming_events"
-      path="../modules/upcoming-events.module",
-      label="Upcoming Events"
-    %}
+      {# ---- ANNUAL SUMMIT ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/annual-summit.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
 
-    {# ========== MEMBERSHIP ========== #}
-    {% module "membership"
-      path="../modules/membership.module",
-      label="Membership"
-    %}
+      {# ---- UPCOMING EVENTS ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/upcoming-events.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
 
-    {# ========== NEWS & INSIGHTS ========== #}
-    {% module "news_grid"
-      path="../modules/news-grid.module",
-      label="News & Insights"
-    %}
+      {# ---- MEMBERSHIP ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/membership.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
 
-    {# ========== NEWSLETTER BANNER ========== #}
-    {% module "newsletter_banner"
-      path="../modules/newsletter-banner.module",
-      label="Newsletter Banner"
-    %}
+      {# ---- NEWS & INSIGHTS ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/news-grid.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+      {# ---- NEWSLETTER BANNER ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/newsletter-banner.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+    {% end_dnd_area %}
 
   </main>
 

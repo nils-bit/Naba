@@ -15,7 +15,7 @@
     "occurrence": {
       "min": 1,
       "max": 6,
-      "default": 3
+      "default": 4
     },
     "children": [
       {
@@ -41,6 +41,10 @@
       {
         "item_label": "About us",
         "link": { "url": { "href": "/about-us", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "item_label": "Annual Summit",
+        "link": { "url": { "href": "https://summit.norwegianafrican.no/", "type": "EXTERNAL" }, "open_in_new_tab": false }
       },
       {
         "item_label": "Events",

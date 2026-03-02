@@ -120,6 +120,56 @@ p:last-child {
   margin-bottom: 0;
 }
 
+/* --- HubSpot DnD System Resets --- */
+/* Prevent DnD wrappers from adding unwanted padding/margins/max-width */
+.dnd-section,
+.dnd-section > .row-fluid-wrapper,
+.dnd-section > .row-fluid-wrapper > .row-fluid,
+.dnd-section .dnd-column,
+.dnd-section .span12,
+.dnd-section .cell-wrapper,
+.dnd-section .hs_cos_wrapper {
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dnd-section {
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+
+.row-fluid-wrapper {
+  max-width: none !important;
+}
+
+.row-fluid {
+  max-width: none !important;
+}
+
+/* Ensure sections within DnD wrappers take full available width */
+.dnd-section .naba-hero,
+.dnd-section .naba-about,
+.dnd-section .naba-summit,
+.dnd-section .naba-events,
+.dnd-section .naba-membership,
+.dnd-section .naba-news,
+.dnd-section .naba-newsletter,
+.naba-header,
+.naba-footer {
+  width: 100%;
+}
+
+/* Full-bleed backgrounds within DnD need viewport stretch */
+.dnd-section .naba-hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+}
+
 /* --- Layout Utilities --- */
 .naba-container {
   width: 100%;
@@ -155,11 +205,11 @@ p:last-child {
   justify-content: center;
   gap: 8px;
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 17.8px;
   font-weight: var(--fw-semibold);
-  padding: 18px 32px;
+  padding: 0 32px;
+  height: 59px;
   min-width: 240px;
-  min-height: 59px;
   border-radius: 300px;
   border: 2px solid transparent;
   cursor: pointer;
@@ -183,7 +233,13 @@ p:last-child {
 .naba-btn--outline {
   background-color: transparent;
   color: var(--naba-white);
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.naba-btn--outline-white {
+  background-color: transparent;
+  color: var(--naba-white);
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .naba-btn--outline:hover {
@@ -229,10 +285,10 @@ p:last-child {
 }
 
 .naba-btn--sm {
-  padding: 10px 24px;
+  padding: 0 24px;
   font-size: 14px;
+  height: 44px;
   min-width: auto;
-  min-height: auto;
 }
 
 /* --- Underline Accent (cyan underline on text) --- */
@@ -383,10 +439,10 @@ p:last-child {
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--fw-semibold);
   color: var(--naba-white);
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid var(--naba-white);
   border-radius: 300px;
   padding: 8px 24px;
   transition: all var(--transition-base);
@@ -565,10 +621,10 @@ p:last-child {
 }
 
 .naba-hero__desc {
-  font-size: 18px;
-  line-height: 1.65;
+  font-size: clamp(18px, 1.8vw, 23px);
+  line-height: 1.4;
   color: var(--naba-text-light);
-  max-width: 560px;
+  max-width: 620px;
   margin-bottom: 40px;
 }
 
@@ -619,6 +675,7 @@ p:last-child {
 
 .naba-about__inner {
   max-width: 740px;
+  margin: 0 auto;
   text-align: left;
 }
 
@@ -639,7 +696,7 @@ p:last-child {
 
 .naba-about__body {
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 1.6;
   color: var(--naba-navy);
   margin-bottom: 40px;
 }
@@ -742,7 +799,7 @@ p:last-child {
 
 .naba-summit__stat-label {
   font-size: 13px;
-  color: var(--naba-text-light);
+  color: var(--naba-green);
 }
 
 /* Right Side */
@@ -941,7 +998,7 @@ p:last-child {
    ============================================================ */
 
 .naba-membership {
-  background-color: var(--naba-light-bg);
+  background-color: transparent;
 }
 
 .naba-membership__grid {
@@ -993,6 +1050,7 @@ p:last-child {
   gap: 16px;
   padding: 24px 28px;
   background-color: var(--naba-white);
+  border: 1px solid var(--naba-border);
   border-radius: var(--radius-sm);
   margin-bottom: 8px;
 }
@@ -1084,7 +1142,7 @@ p:last-child {
 .naba-news__card-image {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 0;
   background-color: var(--naba-navy);
 }
 
@@ -1190,10 +1248,10 @@ p:last-child {
 
 .naba-newsletter__heading {
   font-family: var(--font-heading);
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: clamp(24px, 2.5vw, 30px);
+  font-weight: var(--fw-bold);
   color: var(--naba-navy);
   margin-bottom: 8px;
-  font-style: italic;
 }
 
 .naba-newsletter__body {
@@ -1271,17 +1329,14 @@ p:last-child {
 }
 
 .naba-footer__link {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--naba-navy);
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 3px;
-  transition: text-decoration-color var(--transition-base);
+  text-decoration: none;
+  transition: opacity var(--transition-base);
 }
 
 .naba-footer__link:hover {
-  text-decoration-color: var(--naba-navy);
-  opacity: 1;
+  opacity: 0.7;
 }
 
 /* Social Icons */
