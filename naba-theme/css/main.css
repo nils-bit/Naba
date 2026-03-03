@@ -205,10 +205,10 @@ p:last-child {
   justify-content: center;
   gap: 8px;
   font-family: var(--font-body);
-  font-size: 17.8px;
+  font-size: 18px;
   font-weight: var(--fw-semibold);
   padding: 0 32px;
-  height: 59px;
+  height: 66px;
   min-width: 240px;
   border-radius: 300px;
   border: 2px solid transparent;
@@ -340,15 +340,24 @@ p:last-child {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 20px 0;
-  transition: background-color var(--transition-base), padding var(--transition-base), backdrop-filter var(--transition-base);
+  padding: 0;
+  transition: background-color var(--transition-base), backdrop-filter var(--transition-base);
 }
 
 .naba-header.is-scrolled {
   background-color: rgba(20, 48, 102, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 12px 0;
+}
+
+/* Override .naba-container for header – full viewport width with side padding matching real site */
+.naba-header .naba-container {
+  max-width: none;
+  padding: 18px 44px;
+}
+
+.naba-header.is-scrolled .naba-container {
+  padding: 12px 44px;
 }
 
 .naba-header__inner {
@@ -417,8 +426,8 @@ p:last-child {
 
 .naba-header__nav-link {
   font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: var(--fw-medium);
+  font-size: 18px;
+  font-weight: var(--fw-regular);
   color: var(--naba-white);
   transition: opacity var(--transition-base);
   padding: 8px 0;
@@ -536,7 +545,17 @@ p:last-child {
 }
 
 /* --- Responsive --- */
+@media (max-width: 1023px) {
+  .naba-header .naba-container {
+    padding: 16px 32px;
+  }
+}
+
 @media (max-width: 767px) {
+  .naba-header .naba-container {
+    padding: 14px 20px;
+  }
+
   .naba-header__nav,
   .naba-header__actions {
     display: none;
@@ -602,8 +621,16 @@ p:last-child {
 }
 
 .naba-hero .naba-container {
-  max-width: 100%;
+  max-width: var(--container-max-width);
   width: 100%;
+  padding: 0 48px;
+}
+
+/* On viewports wider than container + 2*padding, centering provides enough margin */
+@media (min-width: 1376px) {
+  .naba-hero .naba-container {
+    padding: 0;
+  }
 }
 
 .naba-hero .naba-label {
@@ -612,12 +639,12 @@ p:last-child {
 
 .naba-hero__heading {
   font-family: var(--font-heading);
-  font-size: clamp(40px, 5.5vw, 66px);
-  line-height: 1.08;
+  font-size: clamp(40px, 5.5vw, 72px);
+  line-height: 1.075;
   font-weight: var(--fw-bold);
   color: var(--naba-white);
   margin-bottom: 24px;
-  max-width: 600px;
+  max-width: 640px;
 }
 
 .naba-hero__desc {
@@ -640,9 +667,19 @@ p:last-child {
 }
 
 /* Responsive */
+@media (max-width: 1023px) {
+  .naba-hero .naba-container {
+    padding: 0 32px;
+  }
+}
+
 @media (max-width: 767px) {
   .naba-hero {
     min-height: 85vh;
+  }
+
+  .naba-hero .naba-container {
+    padding: 0 20px;
   }
 
   .naba-hero__content {
