@@ -1,0 +1,24 @@
+<section class="naba-newsletter" data-module="newsletter-banner">
+  <div class="naba-container">
+    <div class="naba-newsletter__inner naba-reveal">
+
+      <div class="naba-newsletter__text">
+        {% if module.heading %}
+          <h3 class="naba-newsletter__heading">{{ module.heading }}</h3>
+        {% endif %}
+        {% if module.body_text %}
+          <div class="naba-newsletter__body">{{ module.body_text }}</div>
+        {% endif %}
+      </div>
+
+      {% if module.cta_label %}
+        <a href="{{ module.cta_link.url.href }}"
+           class="naba-btn naba-btn--navy naba-newsletter__cta"
+           {% if module.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ module.cta_label }}
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+</section>

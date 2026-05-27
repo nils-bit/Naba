@@ -1,0 +1,39 @@
+<section class="naba-about naba-section" data-module="about-intro">
+  <div class="naba-container">
+    <div class="naba-about__inner">
+
+      {% if module.section_label %}
+        <span class="naba-label naba-reveal">{{ module.section_label }}</span>
+      {% endif %}
+
+      {% if module.heading %}
+        <h2 class="naba-about__heading naba-reveal naba-reveal-delay-1">{{ module.heading }}</h2>
+      {% endif %}
+
+      {% if module.body_text %}
+        <div class="naba-about__body naba-reveal naba-reveal-delay-2">
+          {{ module.body_text }}
+        </div>
+      {% endif %}
+
+      <div class="naba-about__actions naba-reveal naba-reveal-delay-3">
+        {% if module.cta_primary_label %}
+          <a href="{{ module.cta_primary_link.url.href }}"
+             class="naba-btn naba-btn--navy"
+             {% if module.cta_primary_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+            {{ module.cta_primary_label }}
+          </a>
+        {% endif %}
+
+        {% if module.cta_secondary_label %}
+          <a href="{{ module.cta_secondary_link.url.href }}"
+             class="naba-btn naba-btn--outline-dark"
+             {% if module.cta_secondary_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+            {{ module.cta_secondary_label }}
+          </a>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>

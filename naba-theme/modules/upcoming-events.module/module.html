@@ -1,0 +1,55 @@
+<section class="naba-events naba-section" data-module="upcoming-events">
+  <div class="naba-container">
+
+    {# Header Row #}
+    <div class="naba-events__header naba-reveal">
+      <div>
+        {% if module.section_label %}
+          <span class="naba-label">{{ module.section_label }}</span>
+        {% endif %}
+        {% if module.heading %}
+          <h2 class="naba-events__heading">{{ module.heading }}</h2>
+        {% endif %}
+      </div>
+      {% if module.past_events_label %}
+        <a href="{{ module.past_events_link.url.href }}"
+           class="naba-btn naba-btn--outline-dark naba-btn--sm"
+           {% if module.past_events_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+          {{ module.past_events_label }}
+        </a>
+      {% endif %}
+    </div>
+
+    {# Event List #}
+    <div class="naba-events__list">
+      {% for event in module.events %}
+        <a href="{{ event.link.url.href }}"
+           class="naba-events__item naba-reveal naba-reveal-delay-{{ loop.index0 % 4 + 1 }}"
+           {% if event.link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+
+          {# Date Badge #}
+          <div class="naba-events__date-badge">
+            <span class="naba-events__month">{{ event.month }}</span>
+            <span class="naba-events__day">{{ event.day }}</span>
+          </div>
+
+          {# Event Info #}
+          <div class="naba-events__info">
+            <span class="naba-events__date-range">
+              {{ event.date_range }}
+              {% if event.location %}
+                <span class="naba-events__location-dot">&middot;</span>
+                {{ event.location }}
+              {% endif %}
+            </span>
+            <h3 class="naba-events__title">{{ event.title }}</h3>
+          </div>
+
+          {# Arrow #}
+          <span class="naba-events__arrow">&rarr;</span>
+        </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,29 @@
+[
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Heading",
+    "default": "Stay Updated"
+  },
+  {
+    "type": "richtext",
+    "name": "body_text",
+    "label": "Body Text",
+    "default": "<p>Subscribe to the monthly <strong>NABA Newsletter</strong> for events and activities.</p>"
+  },
+  {
+    "type": "text",
+    "name": "cta_label",
+    "label": "CTA Label",
+    "default": "Sign Up Here"
+  },
+  {
+    "type": "link",
+    "name": "cta_link",
+    "label": "CTA Link",
+    "default": {
+      "url": { "href": "/#l-weekly-brief-popup", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  }
+]

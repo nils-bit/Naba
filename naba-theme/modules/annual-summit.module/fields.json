@@ -1,0 +1,85 @@
+[
+  {
+    "type": "text",
+    "name": "section_label",
+    "label": "Section Label",
+    "default": "ANNUAL SUMMIT"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Heading",
+    "default": "Nordic-African Business Summit"
+  },
+  {
+    "type": "text",
+    "name": "location",
+    "label": "Location",
+    "default": "Grand Hotel, Oslo"
+  },
+  {
+    "type": "text",
+    "name": "date",
+    "label": "Date",
+    "default": "8 October 2026"
+  },
+  {
+    "type": "richtext",
+    "name": "description",
+    "label": "Description",
+    "default": "<p>Join top decision-makers at one of Europe\u2019s leading investor conferences focused exclusively on Africa.</p>"
+  },
+  {
+    "type": "image",
+    "name": "graphic",
+    "label": "Summit Graphic / Logo",
+    "default": {
+      "src": "https://images.squarespace-cdn.com/content/v1/5e6b8563380ccc4e4fd26a4f/f278c679-7b91-4509-ad87-d8e2ed5c062c/NABS26+Main+figure.png",
+      "alt": "Summit graphic"
+    }
+  },
+  {
+    "type": "group",
+    "name": "stats",
+    "label": "Stats",
+    "occurrence": {
+      "min": 1,
+      "max": 4,
+      "default": 3
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "number",
+        "label": "Number",
+        "default": "3,000+"
+      },
+      {
+        "type": "text",
+        "name": "item_label",
+        "label": "Label",
+        "default": "Delegates since 2011"
+      }
+    ],
+    "default": [
+      { "number": "3,000+", "item_label": "Delegates since 2011" },
+      { "number": "300+", "item_label": "Global speakers" },
+      { "number": "15th", "item_label": "Annual summit" }
+    ]
+  },
+  {
+    "type": "text",
+    "name": "cta_label",
+    "label": "CTA Label",
+    "default": "Register Now \u2192"
+  },
+  {
+    "type": "link",
+    "name": "cta_link",
+    "label": "CTA Link",
+    "default": {
+      "url": { "href": "https://event.checkin.no/219371/nordic-african-business-summit-2026", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  }
+]

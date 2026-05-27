@@ -1,0 +1,77 @@
+[
+  {
+    "type": "image",
+    "name": "logo",
+    "label": "Logo",
+    "default": {
+      "src": "https://images.squarespace-cdn.com/content/v1/5e6b8563380ccc4e4fd26a4f/1585578767216-59XHJXCVH3F8P405ACLK/NABA-Logo-Horisontal-%5BRGB%5D.png?format=1500w",
+      "alt": "NABA - Norwegian-African Business Association"
+    }
+  },
+  {
+    "type": "group",
+    "name": "nav_items",
+    "label": "Navigation Items",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 4
+    },
+    "children": [
+      {
+        "type": "text",
+        "name": "item_label",
+        "label": "Label",
+        "default": "Page"
+      },
+      {
+        "type": "link",
+        "name": "link",
+        "label": "Link",
+        "default": {
+          "url": {
+            "href": "#",
+            "type": "EXTERNAL"
+          },
+          "open_in_new_tab": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "item_label": "About us",
+        "link": { "url": { "href": "/about-us", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "item_label": "Annual Summit",
+        "link": { "url": { "href": "https://summit.norwegianafrican.no/", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "item_label": "Events",
+        "link": { "url": { "href": "/upcoming-events", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      },
+      {
+        "item_label": "Membership",
+        "link": { "url": { "href": "/membership", "type": "EXTERNAL" }, "open_in_new_tab": false }
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "name": "cta_label",
+    "label": "CTA Button Label",
+    "default": "Contact"
+  },
+  {
+    "type": "link",
+    "name": "cta_link",
+    "label": "CTA Button Link",
+    "default": {
+      "url": {
+        "href": "/contact",
+        "type": "EXTERNAL"
+      },
+      "open_in_new_tab": false
+    }
+  }
+]

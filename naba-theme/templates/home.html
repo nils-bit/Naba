@@ -1,0 +1,122 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: NABA - Home
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ standard_header_includes }}
+
+  {# Google Fonts #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  {# Global CSS #}
+  {{ require_css(get_asset_url('../css/main.css')) }}
+</head>
+<body>
+
+  {# ========== HEADER ========== #}
+  {% module "header"
+    path="../modules/header.module",
+    label="Header"
+  %}
+
+  <main>
+
+    {# ========== DRAG & DROP CONTENT AREA ========== #}
+    {% dnd_area "main_content"
+      label="Main Content"
+    %}
+
+      {# ---- HERO ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/hero.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+      {# ---- ABOUT / WHO WE ARE ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/about-intro.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+      {# ---- ANNUAL SUMMIT ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/annual-summit.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+      {# ---- UPCOMING EVENTS ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/upcoming-events.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+      {# ---- MEMBERSHIP ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/membership.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+      {# ---- NEWS & INSIGHTS ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/news-grid.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+      {# ---- NEWSLETTER BANNER ---- #}
+      {% dnd_section %}
+        {% dnd_module
+          path="../modules/newsletter-banner.module",
+          offset=0,
+          width=12
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+    {% end_dnd_area %}
+
+  </main>
+
+  {# ========== FOOTER ========== #}
+  {% module "footer"
+    path="../modules/footer.module",
+    label="Footer"
+  %}
+
+  {# Global JS #}
+  {{ require_js(get_asset_url('../js/main.js'), 'footer') }}
+
+  {{ standard_footer_includes }}
+</body>
+</html>

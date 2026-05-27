@@ -1,0 +1,54 @@
+{
+  "name": "huball",
+  "version": "0.1.0",
+  "description": "Migrate websites to HubSpot CMS",
+  "type": "module",
+  "bin": {
+    "huball": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "next dev",
+    "dev:cli": "tsx src/index.ts",
+    "build:web": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "prettier --check src/",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "chalk": "^5.3.0",
+    "color-namer": "^1.4.0",
+    "commander": "^12.1.0",
+    "culori": "^4.0.1",
+    "next": "^16.1.6",
+    "ora": "^8.1.0",
+    "p-limit": "^6.1.0",
+    "playwright": "^1.48.0",
+    "prompts": "^2.4.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "sitemapper": "^3.2.8",
+    "tailwindcss": "^4.2.1",
+    "@tailwindcss/postcss": "^4.2.1",
+    "postcss": "^8.5.6"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.2",
+    "@types/node": "^22.0.0",
+    "@types/prompts": "^2.4.9",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "msw": "^2.6.0",
+    "prettier": "^3.3.0",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

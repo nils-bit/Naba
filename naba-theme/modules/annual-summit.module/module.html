@@ -1,0 +1,65 @@
+<section class="naba-summit naba-section" data-module="annual-summit">
+  <div class="naba-container">
+    <div class="naba-summit__card naba-reveal">
+
+      {# Left: Text Content #}
+      <div class="naba-summit__content">
+        {% if module.section_label %}
+          <span class="naba-label">{{ module.section_label }}</span>
+        {% endif %}
+
+        {% if module.heading %}
+          <h2 class="naba-summit__heading">{{ module.heading }}</h2>
+        {% endif %}
+
+        {% if module.location or module.date %}
+          <div class="naba-summit__meta">
+            {% if module.location %}
+              <span class="naba-summit__location">{{ module.location }}</span>
+            {% endif %}
+            {% if module.location and module.date %}
+              <span class="naba-summit__meta-sep">|</span>
+            {% endif %}
+            {% if module.date %}
+              <span class="naba-summit__date">{{ module.date }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if module.description %}
+          <div class="naba-summit__desc">{{ module.description }}</div>
+        {% endif %}
+
+        {# Stats Row #}
+        {% if module.stats %}
+          <div class="naba-summit__stats">
+            {% for stat in module.stats %}
+              <div class="naba-summit__stat">
+                <span class="naba-summit__stat-number">{{ stat.number }}</span>
+                <span class="naba-summit__stat-label">{{ stat.item_label }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {# Right: Graphic + CTA #}
+      <div class="naba-summit__right">
+        {% if module.graphic.src %}
+          <div class="naba-summit__graphic">
+            <img src="{{ module.graphic.src }}" alt="{{ module.graphic.alt }}" loading="lazy">
+          </div>
+        {% endif %}
+
+        {% if module.cta_label %}
+          <a href="{{ module.cta_link.url.href }}"
+             class="naba-btn naba-btn--green naba-summit__cta"
+             {% if module.cta_link.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+            {{ module.cta_label }}
+          </a>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>

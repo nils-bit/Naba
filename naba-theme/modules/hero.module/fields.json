@@ -1,0 +1,59 @@
+[
+  {
+    "type": "image",
+    "name": "background_image",
+    "label": "Background Image",
+    "default": {
+      "src": "https://images.squarespace-cdn.com/content/v1/5e6b8563380ccc4e4fd26a4f/00a4d77e-1af3-46bc-9bdd-f7f050c8ef06/NABA+Home+Hero+Fallback+Img.webp?format=2500w",
+      "alt": "Hero background"
+    }
+  },
+  {
+    "type": "text",
+    "name": "top_label",
+    "label": "Top Label",
+    "default": "NORWEGIAN-AFRICAN BUSINESS ASSOCIATION"
+  },
+  {
+    "type": "text",
+    "name": "heading",
+    "label": "Heading",
+    "default": "Bridging Norwegian & African Business"
+  },
+  {
+    "type": "richtext",
+    "name": "description",
+    "label": "Description",
+    "default": "<p>Driving business opportunities, strengthening partnerships, and unlocking growth in the world's most exciting market.</p>"
+  },
+  {
+    "type": "text",
+    "name": "cta_primary_label",
+    "label": "Primary CTA Label",
+    "default": "Annual Summit 2026 \u2192"
+  },
+  {
+    "type": "link",
+    "name": "cta_primary_link",
+    "label": "Primary CTA Link",
+    "default": {
+      "url": { "href": "https://summit.norwegianafrican.no/", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  },
+  {
+    "type": "text",
+    "name": "cta_secondary_label",
+    "label": "Secondary CTA Label",
+    "default": "Become a Member"
+  },
+  {
+    "type": "link",
+    "name": "cta_secondary_link",
+    "label": "Secondary CTA Link",
+    "default": {
+      "url": { "href": "/membership", "type": "EXTERNAL" },
+      "open_in_new_tab": false
+    }
+  }
+]

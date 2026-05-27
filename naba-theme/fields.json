@@ -1,0 +1,73 @@
+[
+  {
+    "type": "group",
+    "name": "theme_settings",
+    "label": "Theme Settings",
+    "children": [
+      {
+        "type": "color",
+        "name": "color_navy",
+        "label": "Navy (Primary)",
+        "default": {
+          "color": "#143066"
+        }
+      },
+      {
+        "type": "color",
+        "name": "color_cyan",
+        "label": "Cyan (Accent)",
+        "default": {
+          "color": "#00C3EB"
+        }
+      },
+      {
+        "type": "color",
+        "name": "color_green",
+        "label": "Green (CTA Accent)",
+        "default": {
+          "color": "#BEEB7F"
+        }
+      },
+      {
+        "type": "color",
+        "name": "color_light_bg",
+        "label": "Light Background",
+        "default": {
+          "color": "#F4F7F9"
+        }
+      },
+      {
+        "type": "color",
+        "name": "color_white",
+        "label": "White",
+        "default": {
+          "color": "#FFFFFF"
+        }
+      },
+      {
+        "type": "font",
+        "name": "font_heading",
+        "label": "Heading Font",
+        "default": {
+          "font": "DM Serif Display",
+          "fallback": "Georgia, serif",
+          "font_set": "GOOGLE",
+          "size": 48,
+          "size_unit": "px"
+        }
+      },
+      {
+        "type": "font",
+        "name": "font_body",
+        "label": "Body Font",
+        "default": {
+          "font": "Inter",
+          "fallback": "Helvetica Neue, Arial, sans-serif",
+          "font_set": "GOOGLE",
+          "size": 16,
+          "size_unit": "px"
+        }
+      }
+    ]
+  }
+]
