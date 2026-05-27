@@ -1,5 +1,6 @@
 import { optionsResponse, jsonResponse } from "../cors";
 import { createOrUpdateHubSpotContact } from "@/lib/hubspot";
+import { notifyNewLead } from "@/lib/notify";
 
 export async function OPTIONS(request: Request) {
   return optionsResponse(request);
@@ -25,6 +26,8 @@ export async function POST(request: Request) {
     });
 
     console.log("[LeadWidget] Form submission:", { name, email, phone, pageUrl, result });
+
+    await notifyNewLead("form", { name, email, phone, message, pageUrl });
 
     return jsonResponse({ ok: true, hubspot: result }, request);
   } catch {

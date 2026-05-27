@@ -24,9 +24,10 @@
           chatt: "Chatt",
           formular: "Formulär",
           sendBtn: "Skicka",
-          callTitle: "Vill du bli uppringd?",
-          callDesc: "Lämna ditt nummer så ringer vi inom kort.",
-          callBtn: "Ring mig",
+          callTitle: "Vi ringer dig inom 30 sek!",
+          callDesc: "Lämna ditt nummer — helt kostnadsfritt, helt utan förpliktelser.",
+          callBtn: "Ring mig nu",
+          callTrust: "Ingen väntetid • Gratis",
           callSuccess: "Tack! Vi ringer dig snart.",
           formTitle: "Kontakta oss",
           formBtn: "Skicka",
@@ -45,9 +46,10 @@
           chatt: "Chat",
           formular: "Form",
           sendBtn: "Send",
-          callTitle: "Want a callback?",
-          callDesc: "Leave your number and we’ll call you shortly.",
-          callBtn: "Call me",
+          callTitle: "We’ll call you in 30 seconds!",
+          callDesc: "Leave your number — completely free, no obligations.",
+          callBtn: "Call me now",
+          callTrust: "No wait time • Free",
           callSuccess: "Thanks! We’ll call you soon.",
           formTitle: "Contact us",
           formBtn: "Send",
@@ -433,6 +435,37 @@
       }
     }
 
+    /* Callback pulse animation */
+    .lw-callback-pulse {
+      display: inline-block;
+      animation: lw-pulse 2s ease-in-out infinite;
+    }
+    @keyframes lw-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .lw-callback-phone-icon {
+      display: inline-block;
+      margin-right: 6px;
+      animation: lw-phone-ring 1.2s ease-in-out infinite;
+      vertical-align: middle;
+    }
+    @keyframes lw-phone-ring {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-10deg); }
+      30% { transform: rotate(10deg); }
+      40% { transform: rotate(-6deg); }
+      50% { transform: rotate(0deg); }
+    }
+    .lw-trust {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      letter-spacing: 0.3px;
+      margin-top: -4px;
+    }
+
     /* Hidden content sections */
     .lw-content { display: none; flex-direction: column; flex: 1; }
     .lw-content.active { display: flex; }
@@ -495,7 +528,7 @@
     <!-- Callback content -->
     <div class="lw-content" data-tab="ring">
       <div class="lw-callback">
-        <h4>${L.callTitle}</h4>
+        <h4 class="lw-callback-pulse"><span class="lw-callback-phone-icon">${ICONS.phone.replace('viewBox="0 0 24 24"', 'viewBox="0 0 24 24" width="22" height="22" style="fill:' + CONFIG.color + ';vertical-align:middle"')}</span>${L.callTitle}</h4>
         <p>${L.callDesc}</p>
         <div class="lw-field">
           <label>${L.name}</label>
@@ -506,6 +539,7 @@
           <input type="tel" id="cb-phone" placeholder="070-123 45 67" />
         </div>
         <button class="lw-submit" id="cb-submit">${L.callBtn}</button>
+        <div class="lw-trust">${L.callTrust}</div>
       </div>
       <div class="lw-success" id="cb-success">
         <div class="lw-success-icon">${ICONS.check}</div>
